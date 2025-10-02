@@ -64,7 +64,7 @@ const CTASection = () => {
   };
 
   return (
-    <section className="py-20 reef-accent-section">
+    <section className="py-20 reef-accent-section" id="schedule-demo">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
              {/* <Badge variant="secondary" className="mb-4 text-lg px-6 py-2 bg-reef-secondary/20 text-reef-secondary border-reef-secondary/40">
