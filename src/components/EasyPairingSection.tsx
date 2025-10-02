@@ -2,8 +2,34 @@ import { Wrench, Zap, Smartphone, Rocket, Clock } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
+import easyPairingImage from '@/assets/reef_featured_image.png';
+import { useState, useEffect } from 'react';
 
 const EasyPairingSection = () => {
+  const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const calculateCountdown = () => {
+      const eventDate = new Date('2025-11-18');
+      const now = new Date();
+      const diffTime = eventDate.getTime() - now.getTime();
+
+      if (diffTime > 0) {
+        setCountdown({
+          days: Math.floor(diffTime / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((diffTime / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((diffTime / (1000 * 60)) % 60),
+          seconds: Math.floor((diffTime / 1000) % 60)
+        });
+      }
+    };
+
+    calculateCountdown();
+    const interval = setInterval(calculateCountdown, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const features = [
     {
       icon: Wrench,
@@ -36,7 +62,7 @@ const EasyPairingSection = () => {
     <section className="py-20" style={{ backgroundColor: '#d6ffe5' }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2
+          <h1
             className="text-3xl lg:text-5xl mb-6"
             style={{ color: '#01534f' }}
           >
@@ -53,7 +79,7 @@ const EasyPairingSection = () => {
             </span>
             <br className="block lg:hidden" />
             REEF's Most Revolutionary Feature
-          </h2>
+          </h1>
 
           <p
             className="text-xl lg:text-2xl mb-12"
@@ -95,7 +121,7 @@ const EasyPairingSection = () => {
 
           <div className="relative">
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1672542128826-5f0d578713d2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbGVjdHJpYyUyMHZlaGljbGUlMjBjaGFyZ2luZyUyMHN0YXRpb258ZW58MXx8fHwxNzU4NzM2NTc0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+              src={easyPairingImage}
               alt="Easy Pairing Technology"
               className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
             />
@@ -115,45 +141,42 @@ const EasyPairingSection = () => {
         <div className="bg-gradient-to-r from-reef-primary to-reef-secondary rounded-2xl p-8 md:p-12 text-reef-background shadow-2xl mb-16">
           <div className="text-center">
             <h3 className="text-3xl md:text-4xl font-bold mb-4">
-              🔧 ⚡ Installation Revolution
+              Installation Revolution
             </h3>
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               With Easy Pairing, transform a complex installation into a simple and fast process
             </p>
             <div className="flex flex-col items-center gap-4">
-               <Button
-                 variant="secondary"
-                 size="lg"
-                 className="px-12 py-6 text-xl bg-reef-background text-reef-primary hover:bg-reef-background/90 font-bold"
-               >
-                 See Easy Pairing in Action
-               </Button>
+              <Button
+                onClick={() => {
 
-               {/* Countdown and Event Info */}
-               <div className="text-center mt-4">
-                 <div className="text-sm opacity-75 mb-2">
-                   Coming to Enlit Fair 2025
-                 </div>
-                 <div className="text-lg font-semibold mb-1">
-                   📅 18-20 November 2025
-                 </div>
-                 <div className="text-sm opacity-90">
-                   {(() => {
-                     const eventDate = new Date('2025-11-18');
-                     const today = new Date();
-                     const diffTime = eventDate.getTime() - today.getTime();
-                     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                  // 
 
-                     if (diffDays > 0) {
-                       return `⏰ ${diffDays} days to go!`;
-                     } else if (diffDays === 0) {
-                       return '🎉 Today is the day!';
-                     } else {
-                       return '✨ Event concluded';
-                     }
-                   })()}
-                 </div>
-               </div>
+                  scrollTo({ top: document.getElementById("schedule-demo").offsetTop, behavior: 'smooth' });
+                }}
+                variant="secondary"
+                size="lg"
+                className="px-12 py-6 text-xl bg-reef-background text-reef-primary hover:bg-reef-background/90 font-bold"
+              >
+                Schedule your Demo here!
+              </Button>
+
+              {/* Countdown and Event Info */}
+              <div className="text-center mt-4">
+                <div className="text-sm opacity-75 mb-2">
+                  Coming to Enlit Fair 2025
+                </div>
+                <div className="text-lg font-semibold mb-1">
+                  18-20 November 2025
+                </div>
+                <div className="text-sm opacity-90">
+                  {countdown.days > 0
+                    ? `${countdown.days}d ${countdown.hours}h ${countdown.minutes}m ${countdown.seconds}s to go!`
+                    : countdown.days === 0
+                      ? 'Today is the day!'
+                      : 'Event concluded'}
+                </div>
+              </div>
             </div>
           </div>
         </div>
