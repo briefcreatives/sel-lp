@@ -67,17 +67,11 @@ const EasyPairingSection = () => {
             style={{ color: '#01534f' }}
           >
             <span
-              className="inline-block px-4 py-2 rounded-xl mr-4"
-              style={{
-                backgroundColor: '#0adaea',
-                color: '#ffffff',
-                transform: 'rotate(-2deg)',
-                boxShadow: '0 8px 25px rgba(10, 218, 234, 0.3)'
-              }}
+              className="inline py-2 rounded-xl mr-4"
+              style={{ color: '#01534f', fontWeight: 'bold', }}
             >
               Easy Pairing
             </span>
-            <br className="block lg:hidden" />
             REEF's Most Revolutionary Feature
           </h1>
 
@@ -149,9 +143,6 @@ const EasyPairingSection = () => {
             <div className="flex flex-col items-center gap-4">
               <Button
                 onClick={() => {
-
-                  // 
-
                   scrollTo({ top: document.getElementById("schedule-demo").offsetTop, behavior: 'smooth' });
                 }}
                 variant="secondary"
