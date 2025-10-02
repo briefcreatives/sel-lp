@@ -114,7 +114,7 @@ const IntegrationsSection = () => {
         </motion.div>
 
         {/* Algoritmos Cloud */}
-        {/* <div className="mb-16">
+        <div className="mb-16">
           <div className="grid md:grid-cols-3 gap-8">
             {algorithms.map((algorithm, index) => {
               const IconComponent = algorithm.icon;
@@ -141,9 +141,9 @@ const IntegrationsSection = () => {
               );
             })}
           </div>
-        </div> */}
+        </div>
 
-        {/* <motion.div
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -206,7 +206,7 @@ const IntegrationsSection = () => {
               </div>
             </div>
           </motion.div>
-        </motion.div> */}
+        </motion.div>
 
         {/* Bottom Section with Stats */}
         {/* <motion.div
@@ -216,7 +216,7 @@ const IntegrationsSection = () => {
           variants={containerVariants}
           className="mt-20 pt-12 border-t border-[#01534f] border-opacity-20"
         > */}
-          {/* <motion.div
+        {/* <motion.div
             variants={itemVariants}
             className="text-center mb-12"
           >
@@ -226,7 +226,7 @@ const IntegrationsSection = () => {
             </p>
           </motion.div> */}
 
-          {/* <motion.div
+        {/* <motion.div
             variants={itemVariants}
             className="grid grid-cols-2 md:grid-cols-4 gap-8"
           >
