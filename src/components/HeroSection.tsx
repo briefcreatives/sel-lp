@@ -19,10 +19,10 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6 text-center max-w-6xl">
         <div className="animate-fade-in-up">
 
-          <span className="text-primary text-xl mb-2 font-semibold"> Present at Enlit Fair 18-20 November</span>
+          <span className="text-primary text-xl mb-2 font-semibold"> Present at Enlit Fair 18-20 November 2025</span>
 
           <h1 className="reef-hero-title mb-6 max-w-4xl mx-auto">
-            REEF Energy Management: The Definitive Solution for{" "}
+            REEF: The Definitive Solution for{" "}
             <span className="reef-highlight">Distributed Energy Management</span>
           </h1>
 
@@ -34,6 +34,9 @@ const HeroSection = () => {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
+              onClick={() => {
+                scrollTo({ top: document.getElementById("schedule-demo").offsetTop, behavior: 'smooth' });
+              }}
               size="lg"
               className="px-8 py-4 text-xl font-semibold animate-glow-hover animate-scale-hover bg-reef-primary hover:bg-reef-primary/90 text-white"
             >
