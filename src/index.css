@@ -1,3 +1,47 @@
+
+@font-face {
+  font-family: 'ClashGrotesk';
+  src: url('./assets/fonts/ClashGrotesk-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ClashGrotesk';
+  src: url('./assets/fonts/ClashGrotesk-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ClashGrotesk';
+  src: url('./assets/fonts/ClashGrotesk-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ClashGrotesk';
+  src: url('./assets/fonts/ClashGrotesk-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ClashGrotesk';
+  src: url('./assets/fonts/ClashGrotesk-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'ClashGrotesk';
+  src: url('./assets/fonts/ClashGrotesk-Extralight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,7 +56,7 @@
     --reef-accent: 138 100% 92%;        /* #d6ffe5 - Verde claro para seções alternativas */
     --reef-text: 0 0% 0%;               /* #000000 - Preto para textos */
     --reef-background: 0 0% 100%;       /* #ffffff - Branco para background */
-    
+
     /* Base system colors */
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
@@ -49,7 +93,7 @@
     --gradient-accent: linear-gradient(180deg, hsl(var(--reef-background)), hsl(var(--reef-accent)));
     --shadow-reef: 0 10px 40px -15px hsl(var(--reef-primary) / 0.3);
     --shadow-glow: 0 0 30px hsl(var(--reef-secondary) / 0.4);
-    
+
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -117,42 +161,49 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'ClashGrotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 }
 
 /* REEF Custom Components */
 @layer components {
   .reef-hero-title {
-    @apply text-4xl md:text-6xl font-bold text-primary leading-tight;
+    @apply text-3xl md:text-5xl font-semibold text-white leading-tight;
   }
-  
+
   .reef-section-title {
     @apply text-3xl md:text-4xl font-bold text-primary mb-6;
   }
-  
+
   .reef-highlight {
     @apply text-secondary font-semibold;
   }
-  
+
   .reef-card {
     @apply bg-card rounded-lg p-6 shadow-lg border border-border hover:shadow-xl transition-all duration-300;
   }
-  
+
   .reef-accent-section {
     @apply bg-accent/50;
   }
-  
+
   .reef-gradient-text {
     @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
   }
-  
+
   .reef-feature-icon {
     @apply w-12 h-12 text-secondary;
   }
-  
+
   .reef-stat-number {
     @apply text-2xl md:text-3xl font-bold text-secondary;
   }
+}
+
+.border-reef-blue {
+  border-radius: 20px;
+border: 1px solid #76DAD2;
+background: white;
 }
 
 /* REEF Animations */
@@ -160,12 +211,12 @@
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out forwards;
   }
-  
+
   .animate-scale-hover:hover {
     transform: scale(1.05);
     transition: var(--transition-smooth);
   }
-  
+
   .animate-glow-hover:hover {
     box-shadow: var(--shadow-glow);
     transition: var(--transition-smooth);
@@ -181,4 +232,8 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: #d6ffe5;
 }

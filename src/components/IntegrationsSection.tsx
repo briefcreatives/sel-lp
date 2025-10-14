@@ -1,6 +1,8 @@
 import { motion } from 'motion/react';
 import { Thermometer, Car, Battery } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
+import easyPairingImage from '@/assets/reef_featured_image.png';
 
 const IntegrationsSection = () => {
   const containerVariants = {
@@ -46,75 +48,63 @@ const IntegrationsSection = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="mb-20"
-        >
-          <motion.h3
-            variants={itemVariants}
-            className="text-2xl md:text-3xl font-bold text-center mb-12"
-            style={{ color: '#01534f' }}
-          >
-            How Easy Pairing Works
-          </motion.h3>
-          <motion.div
-            variants={containerVariants}
-            className="grid md:grid-cols-3 gap-8"
-          >
-            <motion.div variants={itemVariants} className="text-center">
-              <div
-                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl"
-                style={{ backgroundColor: '#0adaea' }}
-              >
-                1
-              </div>
-              <h4 className="font-semibold text-lg mb-2" style={{ color: '#01534f' }}>Connect REEF</h4>
-              <p className="text-gray-600">Install the REEF device at the desired location</p>
-            </motion.div>
-            <motion.div variants={itemVariants} className="text-center">
-              <div
-                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl"
-                style={{ backgroundColor: '#0adaea' }}
-              >
-                2
-              </div>
-              <h4 className="font-semibold text-lg mb-2" style={{ color: '#01534f' }}>Activate Easy Pairing</h4>
-              <p className="text-gray-600">Configure wireless communication via app</p>
-            </motion.div>
-            <motion.div variants={itemVariants} className="text-center">
-              <div
-                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl"
-                style={{ backgroundColor: '#0adaea' }}
-              >
-                3
-              </div>
-              <h4 className="font-semibold text-lg mb-2" style={{ color: '#01534f' }}>System Active</h4>
-              <p className="text-gray-600">All equipment connected and operational</p>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
           className="text-center mb-16"
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl mb-6 text-[#01534f]"
+            className="text-4xl md:text-5xl mb-9 text-[#01534f] font-[500]"
           >
-            Integrated Intelligence and Advanced Algorithms
+           Technology Under SEL Platform (Features)
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-black max-w-3xl mx-auto leading-relaxed"
+            className="text-xl text-black mx-auto leading-relaxed text-left"
           >
-            Cutting-edge technology with intuitive interfaces and optimized algorithms for maximum efficiency
+            With REEF you have access to a scalable Energy Management Platform, designed to accelerate the development of new energy solutions for Energy Transition, joining Data and Electrons Management tointegrate intelligence, control and to solve multiple practical implementation issues.
           </motion.p>
         </motion.div>
 
+        <div className="mb-24 flex flex-col md:flex-row gap-14 justify-center items-center">
+          <div className="flex-1">
+            <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] mb-6">Hardware</h3>
+            <div className="bg-[#D6FFE5] rounded-[5px] p-6 text-center mb-6">
+              <p className="text-reef-primary text-[24px] font-semibold tracking-[0.72px]">Key features</p>
+            </div>
+
+            <ul className="list-disc pl-5 space-y-1 text-[18px] font-[500] leading-[26px] tracking-[0.56px]">
+              <li>The systems stays up to date</li>
+              <li>Robustness against network outages</li>
+              <li>Compact design and flexible installation</li>
+              <li>High security standards</li>
+              <li>Compatible with REEF Actuators for local integration</li>
+            </ul>
+          </div>
+
+          <div className="flex-1">
+             <div className="relative">
+            <ImageWithFallback
+              src={easyPairingImage}
+              alt="Easy Pairing Technology"
+              className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
+            />
+            <div
+              className="absolute top-4 left-4 px-4 py-2 rounded-lg"
+              style={{
+                backgroundColor: '#01534f',
+                color: '#ffffff'
+              }}
+            >
+              ⚡ Easy Pairing
+            </div>
+          </div>
+          </div>
+        </div>
+
         {/* Algoritmos Cloud */}
         <div className="mb-16">
+          <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] text-center mb-16">
+            Software
+          </h3>
           <div className="grid md:grid-cols-3 gap-8">
             {algorithms.map((algorithm, index) => {
               const IconComponent = algorithm.icon;
@@ -207,68 +197,6 @@ const IntegrationsSection = () => {
             </div>
           </motion.div>
         </motion.div>
-
-        {/* Bottom Section with Stats */}
-        {/* <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
-          className="mt-20 pt-12 border-t border-[#01534f] border-opacity-20"
-        > */}
-        {/* <motion.div
-            variants={itemVariants}
-            className="text-center mb-12"
-          >
-            <h3 className="text-3xl mb-4 text-[#01534f]">Comprehensive Ecosystem Coverage</h3>
-            <p className="text-lg text-black max-w-2xl mx-auto">
-              Our extensive partner network ensures seamless integration with industry-leading equipment and systems
-            </p>
-          </motion.div> */}
-
-        {/* <motion.div
-            variants={itemVariants}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
-          >
-            <div className="text-center">
-              <div className="text-4xl text-[#0adaea] mb-2">10+</div>
-              <div className="text-black text-lg">OEM Partners</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl text-[#0adaea] mb-2">3</div>
-              <div className="text-black text-lg">Management Interfaces</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl text-[#0adaea] mb-2">5+</div>
-              <div className="text-black text-lg">Optimization Use Cases</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl text-[#0adaea] mb-2">100%</div>
-              <div className="text-black text-lg">System Compatibility</div>
-            </div>
-          </motion.div> */}
-        {/* </motion.div> */}
-
-        {/* CTA */}
-        {/* <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={itemVariants}
-          className="text-center mt-16"
-        >
-          <p className="text-lg text-black mb-8 max-w-2xl mx-auto">
-            Ready to integrate REEF with your existing energy infrastructure?
-            Discover how our comprehensive ecosystem transforms energy management.
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-[#0adaea] text-white px-8 py-4 rounded-xl hover:bg-opacity-90 transition-all duration-300"
-          >
-            Explore Integration Options
-          </motion.button>
-        </motion.div> */}
       </div>
     </div>
   );

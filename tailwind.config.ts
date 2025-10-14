@@ -13,14 +13,17 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["ClashGrotesk", "ui-sans-serif", "system-ui", "-apple-system", "BlinkMacSystemFont", '"Segoe UI"', "Roboto", '"Helvetica Neue"', "Arial", '"Noto Sans"', "sans-serif", '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Noto Color Emoji"'],
+      },
       colors: {
         // REEF Brand Colors
         "reef-primary": "hsl(var(--reef-primary))",
-        "reef-secondary": "hsl(var(--reef-secondary))", 
+        "reef-secondary": "hsl(var(--reef-secondary))",
         "reef-accent": "hsl(var(--reef-accent))",
         "reef-text": "hsl(var(--reef-text))",
         "reef-background": "hsl(var(--reef-background))",
-        
+
         // Base system colors
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
