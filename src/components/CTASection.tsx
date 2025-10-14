@@ -12,7 +12,8 @@ const CTASection = () => {
     nome: '',
     email: '',
     empresa: '',
-    telefone: '',
+    posicao: '',
+    pais: '',
     mensagem: ''
   });
 
@@ -51,7 +52,8 @@ const CTASection = () => {
       nome: '',
       email: '',
       empresa: '',
-      telefone: '',
+      posicao: '',
+      pais: '',
       mensagem: ''
     });
   };
@@ -119,15 +121,26 @@ const CTASection = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-primary mb-2">Phone</label>
+                  <label className="block text-sm font-medium text-primary mb-2">Company position</label>
                   <Input
-                    type="tel"
-                    value={formData.telefone}
-                    onChange={(e) => handleInputChange('telefone', e.target.value)}
-                    placeholder="+351 xxx xxx xxx"
+                    type="text"
+                    value={formData.posicao}
+                    onChange={(e) => handleInputChange('posicao', e.target.value)}
+                    placeholder="e.g. Director, Engineer, etc."
                     className="border-reef-secondary/30 focus:border-reef-secondary"
                   />
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-primary mb-2">Base country location</label>
+                <Input
+                  type="text"
+                  value={formData.pais}
+                  onChange={(e) => handleInputChange('pais', e.target.value)}
+                  placeholder="e.g. Portugal, Spain, etc."
+                  className="border-reef-secondary/30 focus:border-reef-secondary"
+                />
               </div>
 
               <div>

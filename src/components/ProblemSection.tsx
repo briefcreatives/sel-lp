@@ -11,162 +11,88 @@ const ProblemSection = () => {
     { icon: Car, label: "Electric Vehicles", value: "40 Millions" }
   ];
 
-  const benefits = [
-    {
-      icon: ArrowLeftRight,
-      title: "Universal Compatibility",
-      description: "Seamlessly manage any energy resource in one platform"
-    },
-    {
-      icon: HandHeart,
-      title: "Easy Setup",
-      description: "Hassle-free installation that saves time and money"
-    },
-    {
-      icon: Wifi,
-      title: "Always Connected",
-      description: "Reliable communication with embedded 4G and access points"
-    },
-    {
-      icon: Cloud,
-      title: "Cloud Provider Independence",
-      description: "Break free from equipment manufacturer fees and restrictions"
-    },
-    {
-      icon: Lightbulb,
-      title: "Local Intelligence, Cloud Control",
-      description: "Smart local control with cloud-driven optimization"
-    },
-    {
-      icon: Smartphone,
-      title: "Expand Digital Services",
-      description: "Meet growing customer needs with ready-to-use interfaces and integration APIs"
-    }
-  ];
+  const cardsData = [
+  {
+    id: 1,
+    title: "Connect",
+    subtitle: ">99% Uptime on your Asset Portfolio",
+    listItems: [
+      "Universal Compatibility",
+      "Always Connect",
+      "Cloud Provider Independence"
+    ]
+  },
+  {
+    id: 2,
+    title: "Easy Pairing",
+    subtitle: "Speed up your Solar battery sales by up to 10%",
+    listItems: [
+      "Easy Setup"
+    ]
+  },
+  {
+    id: 3,
+    title: "Home Manager",
+    subtitle: "Provide up to 10% bill savings to your customers and unlock new flexibility use cases",
+    listItems: [
+      "Local Intelligence",
+      "Cloud Control",
+      "Expand Digital Services"
+    ]
+  }
+];
 
   return (
     <section className="py-20 bg-background">
-      {/* <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="reef-section-title">
-            Prosumers Market is Rapidly Eolving
-          </h2>
-          <div className="flex items-center justify-center gap-2 mb-2 ">
-            <TrendingUp className="reef-feature-icon text-reef-secondary" />
-            <span className="text-4xl md:text-5xl font-bold reef-gradient-text">
-              €400 Billion
-            </span>
-          </div>
-          <p className="text-xl text-muted-foreground">By 2030, it will installed annually</p>
-        </div> */}
-
-      {/* Market Statistics */}
-      {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-          {marketStats.map((stat, index) => {
-            const IconComponent = stat.icon;
-            return (
-              <div key={index} className="reef-card text-center animate-fade-in-up rounded-[30px]">
-                <IconComponent className="reef-feature-icon mx-auto mb-4" />
-                <div className="reef-stat-number">{stat.value}</div>
-                <p className="text-muted-foreground font-medium">{stat.label}</p>
-              </div>
-            );
-          })}
-        </div> */}
-
-      {/* </div> */}
 
       <div className="container mx-auto px-6">
 
         {/* Benefits Grid */}
         <div className="mb-12">
           <h3
-            className="text-2xl lg:text-3xl text-center mb-10"
+            className="text-2xl lg:text-3xl text-center mb-10 font-[500]"
             style={{ color: '#01534f' }}
           >
             Why Choose REEF
           </h3>
 
+          <p className="mb-6 md:px-4">REEF Energy Management redefines how distributed energy resources are deployed and operated. It connects and controls any solar PV, battery, EV or heat pump - no matter the brand - through a robust edge-cloud architecture that works even when the internet doesn’t.</p>
+
+          <p className="text-reef-primary text-[18px] font-semibold md:mb-16 mb-8 md:px-4">By removing cloud dependencies and simplifying installations, REEF helps utilities, EPCs and OEMs scale faster, lower costs, and offer new digital services to their customers.</p>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((benefit, index) => {
-              const IconComponent = benefit.icon;
-              return (
-                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                  <div className="flex items-start space-x-4">
-                    <div
-                      className="p-3 rounded-full"
-                      style={{ backgroundColor: '#d6ffe5' }}
-                    >
-                      <IconComponent
-                        className="w-6 h-6"
-                        style={{ color: '#0adaea' }}
-                      />
-                    </div>
-                    <div>
-                      <h4
-                        className="text-lg mb-2"
-                        style={{ color: '#01534f' }}
-                      >
-                        {benefit.title}
-                      </h4>
-                      <p style={{ color: '#000000' }}>
-                        {benefit.description}
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              );
-            })}
+
+            {cardsData.map((card) => (
+              <div key={card.id} className="p-[30px] border border-reef-blue">
+                <h2 className="text-reef-primary text-[26px] font-semibold leading-[24px] mb-5">{card.title}</h2>
+                <p className="mb-[13px] text-[18px] leading-[26px] font-medium max-w-[282px]">
+                  {card.subtitle.includes('>99% Uptime') ? (
+                    <>
+                      <span className="font-semibold">{card.subtitle.split(' on')[0]}</span>
+                      {card.subtitle.slice(card.subtitle.split(' on')[0].length)}
+                    </>
+                  ) : card.subtitle.includes('battery sales by up to 10%') ? (
+                    <>
+                      {card.subtitle.split('battery sales by up to 10%')[0]}
+                      <span className="font-semibold">battery sales by up to 10%</span>
+                      {card.subtitle.split('battery sales by up to 10%')[1]}
+                    </>
+                  ) : (
+                    card.subtitle
+                  )}
+                </p>
+                <ul className="list-disc pl-5">
+                  {card.listItems.map((item, index) => (
+                    <li key={index} className="mb-1">{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+
           </div>
         </div>
-
-        <div className="text-center">
-          <Button
-            onClick={() => {
-              scrollTo({ top: document.getElementById("schedule-demo").offsetTop, behavior: 'smooth' });
-            }}
-              size = "lg"
-              className = "px-8 py-4 text-lg font-semibold animate-glow-hover animate-scale-hover bg-reef-primary hover:bg-reef-primary/90 text-white"
-                >
-                Schedule call here!
-            </Button>
-      </div>
-
 
     </div>
-
-      {/* Who We Are Section - Full Width Background */ }
-  <div className="mt-20 py-12 md:py-16 md:mb-20">
-    <div className="container mx-auto px-6">
-      <div className="grid lg:grid-cols-2 gap-12 items-center">
-        {/* Left Content - Image */}
-        <div className="order-2 lg:order-1">
-          <div className="rounded-2xl overflow-hidden max-w-[500px]">
-            <ImageWithFallback
-              src="/sel_home_1.webp"
-              alt="Smart Energy team collaboration"
-              className="w-full h-auto object-cover"
-              fallbackSrc="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?q=80&w=1126&auto=format&fit=crop&ixlib=rb-4.0.3"
-            />
-          </div>
-        </div>
-
-        {/* Right Content - Text */}
-        <div className="order-1 lg:order-2">
-          <div className="text-sm font-semibold text-reef-secondary mb-4 uppercase tracking-wider">
-            WHO WE ARE
-          </div>
-          <h3 className="text-2xl md:text-3xl font-bold text-reef-primary mb-6">
-            Smart Energy: collaborators for the future of energy
-          </h3>
-          <p className="text-muted-foreground mb-8 leading-relaxed">
-            At Smart Energy, we embody core values that drive our mission in the energy sector: innovation in integrating user adoption into tech development, collaborative efforts to shape the future of downstream energy, promotion of renewable energy sources for climate resilience, and a commitment to integrity and reliability in all operations. These values inspire us to lead with purpose towards a sustainable and innovative energy future.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
 
     </section >
   );
