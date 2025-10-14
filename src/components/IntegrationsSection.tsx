@@ -184,15 +184,15 @@ const IntegrationsSection = () => {
             <div className="space-y-4">
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">3 DHW Manufacturers</span>
+                <span className="text-black text-lg leading-relaxed">DHW Manufacturers</span>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">4 EV Charging Manufacturers</span>
+                <span className="text-black text-lg leading-relaxed">EV Charging Manufacturers</span>
               </div>
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">3 PV and Battery Inverter Manufacturers</span>
+                <span className="text-black text-lg leading-relaxed">PV and Battery Inverter Manufacturers</span>
               </div>
             </div>
           </motion.div>
