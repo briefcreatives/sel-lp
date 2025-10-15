@@ -71,7 +71,7 @@ const IntegrationsSection = () => {
               <p className="text-reef-primary text-[24px] font-semibold tracking-[0.72px]">Key features</p>
             </div>
 
-            <ul className="list-disc pl-5 space-y-1 text-[18px] font-[500] leading-[26px] tracking-[0.56px]">
+            <ul className="list-disc pl-5 space-y-1 text-[18px] leading-[26px] tracking-[0.56px]">
               <li>The systems stays up to date</li>
               <li>Robustness against network outages</li>
               <li>Compact design and flexible installation</li>

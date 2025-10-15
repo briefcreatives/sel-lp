@@ -24,7 +24,7 @@ const HeroSection = () => {
              for Distributed Energy Resource Integration and Control
           </h1>
 
-          <p className="text-xl md:text-2xl text-white text-left text-muted-foreground mb-8 max-w-7xl leading-relaxed font-semibold tracking-[0.54px]">
+          <p className="text-xl md:text-2xl text-white text-left text-muted-foreground mb-8 max-w-7xl leading-relaxed font-[500] tracking-[0.54px]">
             For Utilities, EPCs and OEMs looking to better connect assets, streamline installations, and orchestrate residential DER portfolios, REEF delivers all this powered by SEL Platform’s edge-cloud technology
           </p>
 
