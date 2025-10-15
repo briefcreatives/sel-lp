@@ -52,7 +52,7 @@ const IntegrationsSection = () => {
                 1
               </div>
               <h4 className="font-semibold text-lg mb-2" style={{ color: '#01534f' }}>Connect REEF</h4>
-              <p className="text-black font-[500] text-[16px] leading-[24px] tracking-[0.52px]">Install the REEF device at the desired location</p>
+              <p className="text-blac] text-[16px] leading-[24px] tracking-[0.52px]">Install the REEF device at the desired location</p>
             </motion.div>
             <motion.div variants={itemVariants} className="text-center">
               <div
@@ -62,7 +62,7 @@ const IntegrationsSection = () => {
                 2
               </div>
               <h4 className="font-semibold text-lg mb-2" style={{ color: '#01534f' }}>Activate Easy Pairing</h4>
-              <p className="text-black font-[500] text-[16px] leading-[24px] tracking-[0.52px]">Configure wireless communication via app</p>
+              <p className="text-black text-[16px] leading-[24px] tracking-[0.52px]">Configure wireless communication via app</p>
             </motion.div>
             <motion.div variants={itemVariants} className="text-center">
               <div
@@ -72,7 +72,7 @@ const IntegrationsSection = () => {
                 3
               </div>
               <h4 className="font-semibold text-lg mb-2" style={{ color: '#01534f' }}>System Active</h4>
-              <p className="text-black font-[500] text-[16px] leading-[24px] tracking-[0.52px]">All equipment connected and operational</p>
+              <p className="text-black text-[16px] leading-[24px] tracking-[0.52px]">All equipment connected and operational</p>
             </motion.div>
 
              <motion.div variants={itemVariants} className="text-center">
@@ -83,7 +83,7 @@ const IntegrationsSection = () => {
                 1
               </div>
               <h4 className="font-semibold text-lg mb-2" style={{ color: '#01534f' }}>Connect REEF</h4>
-              <p className="text-black font-[500] text-[16px] leading-[24px] tracking-[0.52px]">Install the REEF device at the desired location</p>
+              <p className="text-black text-[16px] leading-[24px] tracking-[0.52px]">Install the REEF device at the desired location</p>
             </motion.div>
 
             <motion.div variants={itemVariants} className="text-center">
@@ -94,7 +94,7 @@ const IntegrationsSection = () => {
                 2
               </div>
               <h4 className="font-semibold text-lg mb-2" style={{ color: '#01534f' }}>Activate Easy Pairing</h4>
-              <p className="text-black font-[500] text-[16px] leading-[24px] tracking-[0.52px]">Configure wireless communication via app</p>
+              <p className="text-black text-[16px] leading-[24px] tracking-[0.52px]">Configure wireless communication via app</p>
             </motion.div>
           </motion.div>
         </motion.div>
