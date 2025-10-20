@@ -17,7 +17,7 @@ const CTASection = () => {
     mensagem: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Basic validation
@@ -41,21 +41,41 @@ const CTASection = () => {
       return;
     }
 
-    // Simulate form submission
-    toast({
-      title: "Form submitted successfully!",
-      description: "We will contact you soon to schedule your demonstration."
-    });
-
-    // Reset form
-    setFormData({
-      nome: '',
-      email: '',
-      empresa: '',
-      posicao: '',
-      pais: '',
-      mensagem: ''
-    });
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        toast({
+          title: "Recebido!",
+          description: "Entraremos em contato em breve.",
+        });
+        setFormData({
+          nome: '',
+          email: '',
+          empresa: '',
+          posicao: '',
+          pais: '',
+          mensagem: ''
+        });
+      } else {
+        toast({
+          title: "Erro ao enviar",
+          description: "Tente novamente mais tarde.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Erro de conexão",
+        description: "Não foi possível enviar o formulário.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -227,25 +247,21 @@ const CTASection = () => {
                   <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-sm">✓</span>
                   </div>
-                  <span>Easy Pairing in action - cable-free installation</span>
+                  <span>Seamless integration — discover how REEF connects with batteries, EV chargers, and heat pumps</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-sm">✓</span>
                   </div>
-                  <span>Complete management platform</span>
+                  <span>Smart edge-cloud platform — monitor and manage multiple assets in one place, through dedicated</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-sm">✓</span>
                   </div>
-                  <span>Intelligent optimization algorithms</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-sm">✓</span>
-                  </div>
-                  <span>ROI and specific use cases for your business</span>
+                  <span>interfaces and intelligent algorithms
+Partnership potential — explore new business models and digital services for your customers, plus co-
+development opportunities with REEF</span>
                 </li>
               </ul>
             </div>

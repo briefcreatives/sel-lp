@@ -18,11 +18,6 @@ const Index = () => {
       <HowEasyPairingWorksSection />
       <IntegrationsSection />
       <WhoWeAreSection />
-      {/* <SolutionSection /> */}
-      {/* <EasyPairingSection /> */}
-
-      {/* <IntelligenceSection />
-      <AboutSection /> */}
       <CTASection />
       <Footer />
     </div>
