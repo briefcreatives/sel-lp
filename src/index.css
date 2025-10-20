@@ -237,3 +237,7 @@ background: white;
 .swiper-button-next, .swiper-button-prev {
   color: #d6ffe5;
 }
+
+.container {
+  max-width: 1200px;
+}

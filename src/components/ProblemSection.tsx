@@ -43,7 +43,11 @@ const ProblemSection = () => {
 ];
 
   return (
-    <section className="py-20 bg-background">
+    <section className="pb-20 md:pt-36 py:20 bg-background relative">
+
+      <div className="absolute p-5 bg-reef-primary w-full top-0 flex items-start justify-center">
+        <span className="text-white text-[16px] font-[500] ">Enlit 2025 18-20 November visit our booth 5.D63 and check our sessions Smart Homes: Catalysts for Renewable Energy Integration, on the 18 th and Energy 4.0 Technologies: IIoT and Cloud on the 19th</span>
+      </div>
 
       <div className="container mx-auto px-6">
 
@@ -89,8 +93,22 @@ const ProblemSection = () => {
               </div>
             ))}
 
+
+
           </div>
         </div>
+         <div className="mx-auto flex justify-center">
+                <Button
+                  onClick={() => {
+                    scrollTo({ top: document.getElementById("schedule-demo").offsetTop, behavior: 'smooth' });
+                  }}
+                  variant="default"
+                  size="lg"
+                  className="px-12 py-6 text-xl bg-reef-primary text-white mt-4"
+                >
+                   Book your demo
+                </Button>
+              </div>
 
     </div>
 

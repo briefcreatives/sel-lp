@@ -1,8 +1,13 @@
 import { motion } from 'motion/react';
 import { Thermometer, Car, Battery } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import easyPairingImage from '@/assets/reef_featured_image.png';
+import keyFeaturesImage from '@/assets/key-features.svg';
+import cloudServicesImage from '@/assets/cloud-services.svg';
+import algorithmsImage from '@/assets/algorithms.svg';
+import productFeaturesImage from '@/assets/product-features.svg';
 
 const IntegrationsSection = () => {
   const containerVariants = {
@@ -24,23 +29,23 @@ const IntegrationsSection = () => {
     }
   };
 
-  const algorithms = [
+   const algorithms = [
     {
-      icon: Thermometer,
+      icon: cloudServicesImage,
       title: "Cloud services",
     },
     {
-      icon: Car,
+      icon: algorithmsImage,
       title: "Algorithms",
     },
     {
-      icon: Battery,
+      icon: productFeaturesImage,
       title: "Product features",
-    }
+    },
   ];
 
   return (
-    <div className="py-24 bg-white">
+    <div className="md:py-24 pt-10 pb-1 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* How Easy Pairing Works Section */}
         <motion.div
@@ -65,27 +70,14 @@ const IntegrationsSection = () => {
         </motion.div>
 
         <div className="mb-24 flex flex-col md:flex-row gap-14 justify-center items-center">
-          <div className="flex-1">
-            <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] mb-6">Hardware</h3>
-            <div className="bg-[#D6FFE5] rounded-[5px] p-6 text-center mb-6">
-              <p className="text-reef-primary text-[24px] font-semibold tracking-[0.72px]">Key features</p>
-            </div>
 
-            <ul className="list-disc pl-5 space-y-1 text-[18px] leading-[26px] tracking-[0.56px]">
-              <li>The systems stays up to date</li>
-              <li>Robustness against network outages</li>
-              <li>Compact design and flexible installation</li>
-              <li>High security standards</li>
-              <li>Compatible with REEF Actuators for local integration</li>
-            </ul>
-          </div>
 
-          <div className="flex-1">
+          <div className="">
              <div className="relative">
             <ImageWithFallback
               src={easyPairingImage}
               alt="Easy Pairing Technology"
-              className="w-full h-[500px] object-cover rounded-2xl shadow-xl"
+              className="w-[560px] h-[500px] object-cover rounded-2xl shadow-xl"
             />
             <div
               className="absolute top-4 left-4 px-4 py-2 rounded-lg"
@@ -100,40 +92,103 @@ const IntegrationsSection = () => {
           </div>
         </div>
 
-        {/* Algoritmos Cloud */}
-        <div className="mb-16">
-          <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] text-center mb-16">
-            Software
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {algorithms.map((algorithm, index) => {
-              const IconComponent = algorithm.icon;
-              return (
-                <Card key={index} className="p-4 hover:shadow-lg transition-shadow" style={{ backgroundColor: '#d6ffe5' }}>
+       <div className="flex gap-9 items-start justify-start flex-col lg:flex-row">
+            <div className="min-w-[340px]">
+            <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] mb-4 md:mb-14">1. Ultimate compact device</h3>
+              <Card  className="p-4 hover:shadow-lg transition-shadow mb-6" style={{ backgroundColor: '#d6ffe5' }}>
                   <div className="flex items-center space-x-4">
                     <div
                       className="p-4 rounded-full flex-shrink-0"
                       style={{ backgroundColor: '#01534f' }}
                     >
-                      <IconComponent className="w-8 h-8 text-white" />
+                      <ImageWithFallback src={keyFeaturesImage} className=" text-white w-8 h-8" />
                     </div>
                     <div>
                       <h4
                         className="text-lg"
                         style={{ color: '#01534f' }}
                       >
-                        {algorithm.title}
+                        Key features
                       </h4>
 
                     </div>
                   </div>
                 </Card>
-              );
-            })}
-          </div>
-        </div>
 
-        <motion.div
+            <motion.div variants={itemVariants}>
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                <span className="text-black text-lg leading-relaxed">
+                  The system stays up to date
+                </span>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                <span className="text-black text-lg leading-relaxed">
+                  Robustness against network outages
+                </span>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                <span className="text-black text-lg leading-relaxed">
+                  Compact design and flexible installation
+                </span>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                <span className="text-black text-lg leading-relaxed">
+                  High security standards
+                </span>
+              </div>
+
+              <div className="flex items-start">
+                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                <span className="text-black text-lg leading-relaxed">
+                  Compatible with REEF Actuators for local integration
+                </span>
+              </div>
+            </div>
+          </motion.div>
+
+          </div>
+
+         <div className="md:mb-16 mb-2 flex flex-col">
+          <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] text-left">
+            2. Integrated Intelligence and Advance Algorithms
+          </h3>
+          <span className="mb-8">Cutting edge technology with intuitive interfaces and optimized algorithms for maximum efficiency</span>
+          <div className="grid md:grid-cols-3 gap-8 mb-6 md:mb-0">
+             {algorithms.map((algorithm, index) => (
+            <Card
+              key={index}
+              className="p-4 hover:shadow-lg transition-shadow md:mb-6"
+              style={{ backgroundColor: '#d6ffe5' }}
+            >
+              <div className="flex items-center space-x-4">
+                <div
+                  className="p-4 rounded-full flex-shrink-0 flex items-center justify-center"
+                  style={{ backgroundColor: '#01534f' }}
+                >
+                  <img
+                    src={algorithm.icon}
+                    alt={algorithm.title}
+                    className="w-8 h-8"
+                  />
+                </div>
+                <div>
+                  <h4 className="text-lg" style={{ color: '#01534f' }}>
+                    {algorithm.title}
+                  </h4>
+                </div>
+              </div>
+            </Card>
+          ))}
+          </div>
+                  <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
@@ -197,6 +252,23 @@ const IntegrationsSection = () => {
             </div>
           </motion.div>
         </motion.div>
+        </div>
+
+       </div>
+
+
+         <div className="mx-auto flex justify-center">
+                <Button
+                  onClick={() => {
+                    scrollTo({ top: document.getElementById("schedule-demo").offsetTop, behavior: 'smooth' });
+                  }}
+                  variant="default"
+                  size="lg"
+                  className="px-12 py-6 text-xl bg-reef-primary text-white mt-4"
+                >
+                   Book your demo
+                </Button>
+              </div>
       </div>
     </div>
   );
