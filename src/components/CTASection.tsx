@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -85,13 +86,16 @@ const CTASection = () => {
     }));
   };
 
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
   return (
     <section className="py-20 reef-accent-section" id="schedule-demo">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-             {/* <Badge variant="secondary" className="mb-4 text-lg px-6 py-2 bg-reef-secondary/20 text-reef-secondary border-reef-secondary/40">
-               Exclusive Opportunity
-             </Badge> */}
            <h2 className="reef-section-title">
              Discover How REEF Can <span className="text-reef-primary">Transform Your Business</span>
            </h2>
@@ -189,54 +193,33 @@ const CTASection = () => {
               <p className="text-sm text-center text-muted-foreground mb-2">
                 Or use our online booking system:
               </p>
-              <Button
-                variant="outline"
-                className="w-full"
-                onClick={() => {
-                  toast({
-                    title: "Redirecting...",
-                    description: "Opening Microsoft Bookings system"
-                  });
-                }}
-              >
-                <Calendar className="w-4 h-4 mr-2" />
-                Book via Microsoft Bookings
-              </Button>
+
+              <Dialog open={open} onOpenChange={setOpen}>
+              <DialogTrigger asChild>
+                <Button variant="outline" className="w-full" onClick={handleClick}>
+                  <Calendar className="w-4 h-4 mr-2" />
+                  Book via Microsoft Bookings
+                </Button>
+              </DialogTrigger>
+
+              <DialogContent className="max-w-4xl h-[80vh] p-0 overflow-hidden">
+                <DialogHeader className="px-6 py-4 border-b">
+                  <DialogTitle className="text-[#01534f]">Microsoft Bookings</DialogTitle>
+                </DialogHeader>
+                <iframe
+                  src="https://outlook.office.com/book/Enlit2025SmartEnergyLab@smartenergylab.com/?ismsaljsauthenabled"
+                  width="100%"
+                  height="100%"
+                  scrolling="yes"
+                  style={{ border: "0", minHeight: "calc(80vh - 60px)" }}
+                ></iframe>
+              </DialogContent>
+            </Dialog>
             </div>
           </div>
 
           {/* Contact Information & Benefits */}
           <div className="space-y-8">
-            {/* Contact Info
-            <div className="bg-reef-background rounded-[20px] p-6 shadow-lg border border-reef-secondary/30">
-              <h3 className="text-2xl font-bold text-primary mb-6">Get in Touch</h3>
-
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <Mail className="w-6 h-6 text-reef-secondary" />
-                  <div>
-                    <p className="font-medium text-primary">Email</p>
-                    <p className="text-muted-foreground">pedro.almeida@smartenergylab.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <Building className="w-6 h-6 text-reef-secondary" />
-                  <div>
-                    <p className="font-medium text-primary">Website</p>
-                    <p className="text-muted-foreground">www.smartenergylab.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  <MapPin className="w-6 h-6 text-reef-secondary" />
-                  <div>
-                    <p className="font-medium text-primary">Find us</p>
-                    <p className="text-reef-secondary font-semibold">Enlit Fair 2025</p>
-                  </div>
-                </div>
-              </div>
-            </div> */}
 
             {/* Demo Benefits */}
             <div className="bg-gradient-to-br from-reef-primary to-reef-secondary rounded-[20px] p-8 text-reef-background">
