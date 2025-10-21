@@ -6,22 +6,38 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { logos } from '@/assets/logos';
 import logoFooter from '@/assets/sel-logo-footer.png';
+import logoReef from '@/assets/reef-energy-management.png';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 
 const Footer = () => {
   return (
     <footer className="bg-reef-primary text-reef-background py-16">
       <div className="container mx-auto px-6">
-      <div className="max-w-[385px] flex flex-col">
+      <div className="flex justify-between items-center mb-12">
 
-         <ImageWithFallback
+        <div className="flex flex-wrap justify-center items-center gap-10">
+          <div>
+           <ImageWithFallback
               src={logoFooter}
               alt="Logo Smart Energy Lab"
               className="object-cover max-w-[180px]"
             />
+        </div>
 
-        <span className="my-10">Rua Camilo Castelo Branco, nº44, 5th Floor, 1050-045, Lisboa</span>
-        <span className="mb-2">info@smartenergylab.com</span>
+        <div>
+           <ImageWithFallback
+              src={logoReef}
+              alt="Logo REEF Energy Management"
+              className="object-cover max-w-[180px]"
+            />
+        </div>
+        </div>
+
+        <div className="max-w-[377px] flex flex-col justify-center items-start gap-4">
+          <a
+          target="_blank"
+          href="https://www.google.com/maps/dir//R.+Camilo+Castelo+Branco+44+5th+floor,+1050-045+Lisboa/@38.7262467,-9.2309905,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x61e8bbf4dd28c6d5:0xe90fd57eb27511ea!2m2!1d-9.1485895!2d38.7262756?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D">Rua Camilo Castelo Branco, nº44, 5th Floor, 1050-045, Lisboa</a>
+        <a href="mailto:info@smartenergylab.com">info@smartenergylab.com</a>
           <a
               href="https://www.linkedin.com/company/smartenergylab/"
               target="_blank"
@@ -30,6 +46,7 @@ const Footer = () => {
             >
               <Linkedin className="w-9 h-8 bg-[#d6ffe5] text-2xl text-[#01534f] p-[5px] rounded-[5px]" />
             </a>
+        </div>
       </div>
         {/* Logos Swiper */}
         <div className="w-full flex justify-center mb-10">
