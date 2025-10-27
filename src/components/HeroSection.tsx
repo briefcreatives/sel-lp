@@ -1,27 +1,33 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/bg-hero-sel.png";
+import reefVideo from "@/assets/reef-video.mp4";
 import logoReef from '@/assets/reef-black.png';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 
 const HeroSection = () => {
   return (
-    <section className="relative md:pt-[150px] md:pb-[150px] pt-24 pb-20 flex items-center md:min-h-[60vh] justify-center mt-[63px]">
+    <section className="relative md:pt-[150px] md:pb-[150px] pt-24 pb-20 flex items-center md:min-h-[90vh] justify-center mt-[63px]">
       <div className="absolute p-5 bg-[#0CC6DE] z-40 w-full top-[-64px] flex items-start justify-center">
         <span className="text-black text-[16px] font-[500] ">Enlit 2025 18-20 November visit our booth 5.D63 and check our sessions Smart Homes: Catalysts for Renewable Energy Integration, on the 18 th and Energy 4.0 Technologies: IIoT and Cloud on the 19th</span>
       </div>
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <img
-          src={heroImage}
-          alt="REEF Energy Management - Connected equipment"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover object-center"
-        />
+          src={reefVideo}
+        >
+          Your browser does not support the video tag.
+        </video>
         {/* <div className="absolute inset-0 bg-gradient-to-br from-reef-background via-reef-background/95 to-reef-accent/30"></div> */}
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 flex items-center justify-center">
+      <div className="relative z-10 container mx-auto px-6 flex items-center justify-end">
         <div className="animate-fade-in-up flex flex-col items-start">
             <div>
            <ImageWithFallback
