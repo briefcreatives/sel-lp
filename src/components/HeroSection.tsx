@@ -1,16 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/bg-hero-sel.png";
+import logoReef from '@/assets/reef-black.png';
+import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 
 const HeroSection = () => {
   return (
-    <section className="relative md:pt-[150px] md:pb-[150px] pt-24 pb-20 flex items-center md:min-h-[60vh] justify-center overflow-hidden">
+    <section className="relative md:pt-[150px] md:pb-[150px] pt-24 pb-20 flex items-center md:min-h-[60vh] justify-center mt-[63px]">
+      <div className="absolute p-5 bg-[#0CC6DE] z-40 w-full top-[-64px] flex items-start justify-center">
+        <span className="text-black text-[16px] font-[500] ">Enlit 2025 18-20 November visit our booth 5.D63 and check our sessions Smart Homes: Catalysts for Renewable Energy Integration, on the 18 th and Energy 4.0 Technologies: IIoT and Cloud on the 19th</span>
+      </div>
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="REEF Energy Management - Connected equipment"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
         {/* <div className="absolute inset-0 bg-gradient-to-br from-reef-background via-reef-background/95 to-reef-accent/30"></div> */}
       </div>
@@ -18,12 +23,15 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 flex items-center justify-center">
         <div className="animate-fade-in-up flex flex-col items-start">
-          <span className="text-black text-2xl text-left font-[500]">Present at Enlit Fair 18-20 November 2025</span>
-          <h1 className="text-reef-primary reef-hero-title mb-6 max-w-7xl text-left mt-4">
-            REEF Energy Management
-          </h1>
+            <div>
+           <ImageWithFallback
+              src={logoReef}
+              alt="Logo REEF Energy Management"
+              className="object-cover max-w-[180px]"
+            />
+        </div>
 
-          <p className="text-xl md:text-2xl text-black text-left mb-8 max-w-7xl leading-relaxed font-[500] tracking-[0.54px]">
+          <p className="text-xl md:text-2xl text-black text-left mb-8 max-w-7xl leading-relaxed font-[500] tracking-[0.54px] mt-[26px]">
             The Scalable Edge cloud core for distributed Energy<br /> Resource Integration and Control
           </p>
 

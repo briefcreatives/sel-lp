@@ -223,7 +223,7 @@ const CTASection = () => {
 
             {/* Demo Benefits */}
             <div className="bg-gradient-to-br from-reef-primary to-reef-secondary rounded-[20px] p-8 text-reef-background">
-              <h3 className="text-2xl font-bold mb-6">What you'll see in the demo:</h3>
+              <h3 className="text-2xl font-semibold mb-6">What you'll see in the demo:</h3>
 
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
@@ -236,15 +236,19 @@ const CTASection = () => {
                   <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-sm">✓</span>
                   </div>
-                  <span>Smart edge-cloud platform — monitor and manage multiple assets in one place, through dedicated</span>
+                  <span>Live pairing demo — see non-wired device communication in action</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-sm">✓</span>
                   </div>
-                  <span>interfaces and intelligent algorithms
-Partnership potential — explore new business models and digital services for your customers, plus co-
-development opportunities with REEF</span>
+                  <span>Smart edge-cloud platform — monitor and manage multiple assets in one place, through dedicated interfaces and intelligent algorithms</span>
+                </li>
+                 <li className="flex items-start gap-3">
+                  <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <span className="text-sm">✓</span>
+                  </div>
+                  <span>Partnership potential — explore new business models and digital services for your customers, plus co-development opportunities with REEF</span>
                 </li>
               </ul>
             </div>

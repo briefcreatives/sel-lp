@@ -43,11 +43,7 @@ const ProblemSection = () => {
 ];
 
   return (
-    <section className="pb-20 md:pt-36 py:20 bg-background relative">
-
-      <div className="absolute p-5 bg-reef-primary w-full top-0 flex items-start justify-center">
-        <span className="text-white text-[16px] font-[500] ">Enlit 2025 18-20 November visit our booth 5.D63 and check our sessions Smart Homes: Catalysts for Renewable Energy Integration, on the 18 th and Energy 4.0 Technologies: IIoT and Cloud on the 19th</span>
-      </div>
+    <section className="py-20 bg-background">
 
       <div className="container mx-auto px-6">
 
@@ -60,9 +56,9 @@ const ProblemSection = () => {
             Why Choose REEF
           </h3>
 
-          <p className="mb-6 md:px-4">REEF Energy Management redefines how distributed energy resources are deployed and operated. It connects and controls any solar PV, battery, EV or heat pump - no matter the brand - through a robust edge-cloud architecture that works even when the internet doesn’t.</p>
+          <p className="mb-6 md:px-4 text-center text-[16px]">REEF Energy Management redefines how distributed energy resources are deployed and operated. It connects and controls any solar PV, battery, EV or heat pump - no matter the brand - through a robust edge-cloud architecture that works even when the internet doesn’t.</p>
 
-          <p className="text-reef-primary text-[18px] font-semibold md:mb-16 mb-8 md:px-4">By removing cloud dependencies and simplifying installations, REEF helps utilities, EPCs and OEMs scale faster, lower costs, and offer new digital services to their customers.</p>
+          <p className="text-black text-[16px] font-[500] md:mb-16 mb-8 md:px-4 text-center">By removing cloud dependencies and simplifying installations, REEF helps utilities, EPCs and OEMs scale faster, lower costs, and offer new digital services to their customers.</p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -85,11 +81,16 @@ const ProblemSection = () => {
                     card.subtitle
                   )}
                 </p>
-                <ul className="list-disc pl-5">
-                  {card.listItems.map((item, index) => (
-                    <li key={index} className="mb-1">{item}</li>
-                  ))}
-                </ul>
+               <div className="space-y-3">
+                {card.listItems.map((item, index) => (
+                  <div key={index} className="flex items-start">
+                    <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                    <span className="text-black text-lg leading-relaxed">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
               </div>
             ))}
 

@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import easyPairingImage from '@/assets/reef_featured_image.png';
 import keyFeaturesImage from '@/assets/key-features.svg';
-import cloudServicesImage from '@/assets/cloud-services.svg';
-import algorithmsImage from '@/assets/algorithms.svg';
-import productFeaturesImage from '@/assets/product-features.svg';
+import cloudServicesImage from '@/assets/cloud.svg';
+import algorithmsImage from '@/assets/algorithms-1.svg';
+import productFeaturesImage from '@/assets/prod-features.svg';
 
 const IntegrationsSection = () => {
   const containerVariants = {
@@ -59,7 +59,7 @@ const IntegrationsSection = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl mb-9 text-[#01534f] font-[500]"
           >
-           Technology Under SEL Platform (Features)
+           Explore SEL Platform’s Capabilities
           </motion.h2>
           <motion.p
             variants={itemVariants}
@@ -86,68 +86,67 @@ const IntegrationsSection = () => {
                 color: '#ffffff'
               }}
             >
-              ⚡ Easy Pairing
+              ⚡ Controlador SEL
             </div>
           </div>
           </div>
         </div>
 
-       <div className="flex gap-9 items-start justify-start flex-col lg:flex-row">
-            <div className="min-w-[340px]">
-            <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] mb-4 md:mb-14">1. Ultimate compact device</h3>
-              <Card  className="p-4 hover:shadow-lg transition-shadow mb-6" style={{ backgroundColor: '#d6ffe5' }}>
-                  <div className="flex items-center space-x-4">
+       <div className="flex gap-9 items-start justify-center flex-col lg:flex-row">
+            <div className="min-w-[340px] flex flex-col">
+            <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] text-center">Ultimate compact device</h3>
+            <span className="mb-8 text-center">Cutting edge technology</span>
+            <motion.div variants={itemVariants}>
+            <div className="space-y-4 bg-reef-primary rounded-xl p-6 text-white">
+              <div className="flex items-center space-x-4 mb-5">
                     <div
-                      className="p-4 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: '#01534f' }}
+                      className="rounded-full flex-shrink-0"
                     >
                       <ImageWithFallback src={keyFeaturesImage} className=" text-white w-8 h-8" />
                     </div>
                     <div>
                       <h4
-                        className="text-lg"
-                        style={{ color: '#01534f' }}
+                        className="text-lg font-[500]"
+                        style={{ color: '#FFFFFF' }}
                       >
-                        Key features
+                        Local Controllers
                       </h4>
 
                     </div>
                   </div>
-                </Card>
-
-            <motion.div variants={itemVariants}>
-            <div className="space-y-4">
+                   <span className="font-[500] text-[18px]">Key features</span>
               <div className="flex items-start">
+
                 <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">
+                <span className="text-white text-[14px] leading-relaxed">
                   The system stays up to date
                 </span>
               </div>
 
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">
+                <span className="text-white text-[14px] leading-relaxed">
                   Robustness against network outages
                 </span>
               </div>
 
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">
+                <span className="text-white text-[14px] leading-relaxed">
                   Compact design and flexible installation
                 </span>
               </div>
 
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">
+                <span className="text-white text-[14px] leading-relaxed">
                   High security standards
                 </span>
               </div>
 
               <div className="flex items-start">
                 <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">
+                <span className="text-white text-[14px] leading-relaxed">
                   Compatible with REEF Actuators for local integration
                 </span>
               </div>
@@ -157,101 +156,98 @@ const IntegrationsSection = () => {
           </div>
 
          <div className="md:mb-16 mb-2 flex flex-col">
-          <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] text-left">
-            2. Integrated Intelligence and Advance Algorithms
+          <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] text-center">
+            Integrated Intelligence and Advance Algorithms
           </h3>
-          <span className="mb-8">Cutting edge technology with intuitive interfaces and optimized algorithms for maximum efficiency</span>
-          <div className="grid md:grid-cols-3 gap-8 mb-6 md:mb-0">
-             {algorithms.map((algorithm, index) => (
-            <Card
-              key={index}
-              className="p-4 hover:shadow-lg transition-shadow md:mb-6"
-              style={{ backgroundColor: '#d6ffe5' }}
-            >
-              <div className="flex items-center space-x-4">
-                <div
-                  className="p-4 rounded-full flex-shrink-0 flex items-center justify-center"
-                  style={{ backgroundColor: '#01534f' }}
-                >
-                  <img
-                    src={algorithm.icon}
-                    alt={algorithm.title}
-                    className="w-8 h-8"
-                  />
+          <span className="mb-8 text-center">Cutting edge technology with intuitive interfaces and optimized algorithms for maximum efficiency</span>
+          <div className="grid md:grid-cols-3 gap-3 mb-6 md:mb-0">
+            {/* Card 1: Interfaces */}
+            <Card className="bg-[#BFE3DA] rounded-xl p-6 text-black flex flex-col items-start  min-h-[343px]">
+              <div className="flex items-center space-x-4 mb-5">
+                <div className="rounded-full flex-shrink-0">
+                  <ImageWithFallback src={cloudServicesImage} className="text-white w-8 h-8" />
                 </div>
                 <div>
-                  <h4 className="text-lg" style={{ color: '#01534f' }}>
-                    {algorithm.title}
+                  <h4 className="text-lg font-[500]" style={{ color: '#005751' }}>
+                    Cloud Services
                   </h4>
                 </div>
               </div>
+              <span className="font-[500] text-[18px] mb-4">Interfaces</span>
+              <div className="space-y-4 w-full">
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <span className="text-black text-[14px] leading-relaxed">Asset Management Portal</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <span className="text-black text-[14px] leading-relaxed">Commissioning Portal</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <span className="text-black text-[14px] leading-relaxed">User Web APP</span>
+                </div>
+              </div>
             </Card>
-          ))}
+
+            {/* Card 2: Use Cases */}
+            <Card className="bg-[#BFE3DA] rounded-xl p-6 text-black flex flex-col items-start min-h-[343px]">
+              <div className="flex items-center space-x-4 mb-5">
+                <div className="rounded-full flex-shrink-0">
+                  <ImageWithFallback src={algorithmsImage} className="text-white w-8 h-8" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-[500]" style={{ color: '#005751' }}>
+                   Algorithms
+                  </h4>
+                </div>
+              </div>
+              <span className="font-[500] text-[18px] mb-4">Use Cases</span>
+              <div className="space-y-4 w-full">
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <span className="text-black text-[14px] leading-relaxed">Energy and Power Optimization for DHW</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <span className="text-black text-[14px] leading-relaxed">Smart Charging and Load Balancing on EV</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <span className="text-black text-[14px] leading-relaxed">Battery Optimized Control</span>
+                </div>
+              </div>
+            </Card>
+
+            {/* Card 3: OEM Integrations */}
+            <Card className="bg-[#BFE3DA] rounded-xl p-6 text-black flex flex-col items-start min-h-[343px]">
+              <div className="flex items-center space-x-4 mb-5">
+                <div className="rounded-full flex-shrink-0">
+                  <ImageWithFallback src={productFeaturesImage} className="text-white w-8 h-8" />
+                </div>
+                <div>
+                  <h4 className="text-lg font-[500]" style={{ color: '#005751' }}>
+                   Product features
+                  </h4>
+                </div>
+              </div>
+              <span className="font-[500] text-[18px] mb-4">OEM Integration</span>
+              <div className="space-y-4 w-full">
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <span className="text-black text-[14px] leading-relaxed">DHW Manufacturers</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <span className="text-black text-[14px] leading-relaxed">EV Charging Manufacturers</span>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
+                  <span className="text-black text-[14px] leading-relaxed">PV and Battery Inverter Manufacturers</span>
+                </div>
+              </div>
+            </Card>
           </div>
-                  <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
-          className="grid lg:grid-cols-3 gap-12 lg:gap-16"
-        >
-
-          <motion.div variants={itemVariants}>
-            <h3 className="text-2xl mb-8 text-[#01534f]">Interfaces</h3>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">Asset Management Portal</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">Commissioning Portal</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">User Web APP</span>
-              </div>
-            </div>
-          </motion.div>
-
-
-          <motion.div variants={itemVariants}>
-            <h3 className="text-2xl mb-8 text-[#01534f]">Use Cases</h3>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">Energy and Power Optimization for DHW</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">Smart Charging and Load Balancing on EV</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">Battery Optimized Control</span>
-              </div>
-            </div>
-          </motion.div>
-
-
-          <motion.div variants={itemVariants}>
-            <h3 className="text-2xl mb-8 text-[#01534f]">OEM Integrations</h3>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">DHW Manufacturers</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">EV Charging Manufacturers</span>
-              </div>
-              <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-black text-lg leading-relaxed">PV and Battery Inverter Manufacturers</span>
-              </div>
-            </div>
-          </motion.div>
-        </motion.div>
         </div>
 
        </div>

@@ -17,35 +17,31 @@ const Footer = () => {
 
         <div className="flex flex-wrap justify-center items-center gap-10">
           <div>
-           <ImageWithFallback
-              src={logoFooter}
-              alt="Logo Smart Energy Lab"
-              className="object-cover max-w-[180px]"
-            />
-        </div>
+            <a href="/">
+              <ImageWithFallback
+                src={logoFooter}
+                alt="Logo Smart Energy Lab"
+                className="object-cover max-w-[180px]"
+              />
+            </a>
+          </div>
 
-        <div>
-           <ImageWithFallback
-              src={logoReef}
-              alt="Logo REEF Energy Management"
-              className="object-cover max-w-[180px]"
-            />
-        </div>
         </div>
 
         <div className="max-w-[377px] flex flex-col justify-center items-start gap-4">
           <a
-          target="_blank"
-          href="https://www.google.com/maps/dir//R.+Camilo+Castelo+Branco+44+5th+floor,+1050-045+Lisboa/@38.7262467,-9.2309905,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x61e8bbf4dd28c6d5:0xe90fd57eb27511ea!2m2!1d-9.1485895!2d38.7262756?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D">Rua Camilo Castelo Branco, nº44, 5th Floor, 1050-045, Lisboa</a>
-        <a href="mailto:info@smartenergylab.com">info@smartenergylab.com</a>
-          <a
               href="https://www.linkedin.com/company/smartenergylab/"
               target="_blank"
-              className="text-reef-background/60 hover:text-reef-secondary transition-colors mb-12"
+              className="text-reef-background/60 hover:text-reef-secondary transition-colors mb-12 ml-auto"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-9 h-8 bg-[#d6ffe5] text-2xl text-[#01534f] p-[5px] rounded-[5px]" />
             </a>
+          <a
+          target="_blank"
+          href="https://www.google.com/maps/dir//R.+Camilo+Castelo+Branco+44+5th+floor,+1050-045+Lisboa/@38.7262467,-9.2309905,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x61e8bbf4dd28c6d5:0xe90fd57eb27511ea!2m2!1d-9.1485895!2d38.7262756?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D">Rua Camilo Castelo Branco, nº44, 5th Floor, 1050-045, Lisboa</a>
+        <a href="mailto:info@smartenergylab.com">info@smartenergylab.com</a>
+
         </div>
       </div>
         {/* Logos Swiper */}
@@ -67,22 +63,6 @@ const Footer = () => {
           </Swiper>
         </div>
 
-
-        {/* Social Links */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-reef-background/20">
-          <div className="flex items-center space-x-6 mb-4 md:mb-0">
-
-            <a
-              href="#"
-              className="text-reef-background/60 hover:text-reef-secondary transition-colors"
-              aria-label="Twitter"
-            >
-              <Twitter className="w-6 h-6" />
-            </a>
-          </div>
-
-
-        </div>
 
         {/* Bottom CTA */}
         <div className="text-center mt-8">
