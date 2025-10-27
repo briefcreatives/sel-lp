@@ -46,18 +46,18 @@ const IntegrationsSection = () => {
           >
             <motion.div variants={itemVariants} className="text-center max-w-80">
               <div
-                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-semibold text-xl"
-                style={{ backgroundColor: '#01534f' }}
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-reef-primary font-semibold text-xl"
+                style={{ backgroundColor: '#76DBD3' }}
               >
                 1
               </div>
               <h4 className="font-semibold text-lg mb-2" style={{ color: '#01534f' }}>Installation</h4>
-              <p className="text-blac] text-[16px] leading-[24px] tracking-[0.52px]">Mount the controller next to the battery</p>
+              <p className="text-black text-[16px] leading-[24px] tracking-[0.52px]">Mount the controller next to the battery</p>
             </motion.div>
             <motion.div variants={itemVariants} className="text-center max-w-80">
               <div
-                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-semibold text-xl"
-                style={{ backgroundColor: '#01534f' }}
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-reef-primary font-semibold text-xl"
+                style={{ backgroundColor: '#76DBD3' }}
               >
                 2
               </div>
@@ -67,8 +67,8 @@ actuators by pressing each pairing button for 5 seconds</p>
             </motion.div>
             <motion.div variants={itemVariants} className="text-center max-w-80">
               <div
-                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-semibold text-xl"
-                style={{ backgroundColor: '#01534f' }}
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-reef-primary font-semibold text-xl"
+                style={{ backgroundColor: '#76DBD3' }}
               >
                 3
               </div>
@@ -79,8 +79,8 @@ actuators next to each new asset</p>
 
              <motion.div variants={itemVariants} className="text-center max-w-80">
               <div
-                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-semibold text-xl"
-                style={{ backgroundColor: '#01534f' }}
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-reef-primary font-semibold text-xl"
+                style={{ backgroundColor: '#76DBD3' }}
               >
                 4
               </div>
@@ -90,8 +90,8 @@ actuators next to each new asset</p>
 
             <motion.div variants={itemVariants} className="text-center max-w-80">
               <div
-                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-semibold text-xl"
-                style={{ backgroundColor: '#01534f' }}
+                className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-reef-primary font-semibold text-xl"
+                style={{ backgroundColor: '#76DBD3' }}
               >
                 5
               </div>

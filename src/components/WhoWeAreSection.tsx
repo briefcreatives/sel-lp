@@ -23,17 +23,17 @@ const WhoWeAreSection = () => {
           <div className="text-sm font-semibold text-reef-secondary mb-4 uppercase tracking-wider">
             WHO WE ARE
           </div>
-          <h3 className="text-2xl md:text-3xl font-bold text-reef-primary mb-6">
-            Smart Energy: collaborators for the future of energy
+          <h3 className="text-2xl md:text-3xl font-[500] text-reef-primary mb-6">
+            A dynamic team shaping a green energy future at Smart Energy Lab
           </h3>
-          <p className="text-muted-foreground mb-8 leading-relaxed">
-            At Smart Energy, we embody core values that drive our mission in the energy sector: innovation in integrating user adoption into tech development, collaborative efforts to shape the future of downstream energy, promotion of renewable energy sources for climate resilience, and a commitment to integrity and reliability in all operations. These values inspire us to lead with purpose towards a sustainable and innovative energy future.
+          <p className="text-[#00100F] mb-8 leading-relaxed">
+            A team of over 60 highly qualified, energetic, and dedicated individuals that includes innovative thinkers, passionate engineers, insightful analysts, visionary designers, skilled software developers, and strategic business experts
           </p>
 
             <Button
                 variant="default"
                 size="lg"
-                className="px-8 py-4"
+                className="px-8 py-4 bg-[#0ADAEA] text-black hover:text-white"
                 onClick={() => window.open('https://www.smartenergylab.pt/who-we-are/', '_blank')}
               >
                Discovery more here
