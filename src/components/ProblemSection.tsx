@@ -68,10 +68,9 @@ const ProblemSection = () => {
               <div key={card.id} className="p-[30px] border border-reef-blue">
                 <h2 className="text-reef-primary text-[26px] font-semibold leading-[24px] mb-5">{card.title}</h2>
                 <p className="mb-[13px] text-[18px] leading-[26px] font-medium max-w-[282px]">
-                  {/* Destaca as strings solicitadas em todos os subtitles */}
+                  {/* Destaca as strings solicitadas e quebra linha em \n */}
                   {(() => {
                     let s = card.subtitle;
-                    // Array de strings a destacar
                     const highlights = [
                       'Bring online local storage assets,',
                       '>99% Uptime',
@@ -81,10 +80,14 @@ const ProblemSection = () => {
                       'accelerate heat electrification',
                       'up to 10% bill savings'
                     ];
-                    // Função para destacar
                     const parts = [];
                     let idx = 0;
                     while (idx < s.length) {
+                      if (s[idx] === '\n') {
+                        parts.push(<br key={idx} />);
+                        idx++;
+                        continue;
+                      }
                       let found = false;
                       for (const h of highlights) {
                         if (s.slice(idx).startsWith(h)) {
