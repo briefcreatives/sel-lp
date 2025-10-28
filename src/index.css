@@ -1,3 +1,22 @@
+/* Marquee animation for HeroSection banner */
+
+.marquee-track {
+  display: flex;
+  width: 200vw;
+  animation: marquee-loop 40s linear infinite;
+}
+.marquee-text {
+  min-width: 100vw;
+  text-align: center;
+}
+@keyframes marquee-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
 
 @font-face {
   font-family: 'ClashGrotesk';
