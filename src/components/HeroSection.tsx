@@ -17,12 +17,6 @@ const HeroSection = () => {
             >
               Enlit 2025 18-20 November visit our booth 5.D63 and check our sessions Smart Homes: Catalysts for Renewable Energy Integration, on the 18 th and Energy 4.0 Technologies: IIoT and Cloud on the 19th
             </span>
-            <span
-              className="block whitespace-nowrap text-black text-[16px] font-[500] marquee-text"
-              style={{ display: 'inline-block', minWidth: '100vw', textAlign: 'center' }}
-            >
-              Enlit 2025 18-20 November visit our booth 5.D63 and check our sessions Smart Homes: Catalysts for Renewable Energy Integration, on the 18 th and Energy 4.0 Technologies: IIoT and Cloud on the 19th
-            </span>
           </div>
         </div>
       </div>
