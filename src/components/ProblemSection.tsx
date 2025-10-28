@@ -15,7 +15,7 @@ const ProblemSection = () => {
   {
     id: 1,
     title: "Connect",
-    subtitle: ">99% Uptime on your Asset Portfolio",
+    subtitle: "Bring online local storage assets, ensuring seamless communication with the cloud\n>99% Uptime on your Asset Portfolio",
     listItems: [
       "Universal Compatibility",
       "Always Connect",
@@ -25,19 +25,21 @@ const ProblemSection = () => {
   {
     id: 2,
     title: "Easy Pairing",
-    subtitle: "Speed up your Solar battery sales by up to 10%",
+    subtitle: "Enable local storage assets installation, breaking physical links between devices\nBoost your Solar battery sales by up to 10%",
     listItems: [
-      "Easy Setup"
+      "Easy Setup",
+      "Higher Conversion Rate"
     ]
   },
   {
     id: 3,
     title: "Home Manager",
-    subtitle: "Provide up to 10% bill savings to your customers and unlock new flexibility use cases",
+    subtitle: "Manage and optimize storage assets to create customer and system value and accelerate heat electrification. \n Provide up to 10% bill savings for your customers and unlock new flexibility use cases",
     listItems: [
       "Local Intelligence",
       "Cloud Control",
-      "Expand Digital Services"
+      "Expand Digital Services",
+      "Enable all-electric installations within power-capacity constraints"
     ]
   }
 ];
@@ -66,20 +68,39 @@ const ProblemSection = () => {
               <div key={card.id} className="p-[30px] border border-reef-blue">
                 <h2 className="text-reef-primary text-[26px] font-semibold leading-[24px] mb-5">{card.title}</h2>
                 <p className="mb-[13px] text-[18px] leading-[26px] font-medium max-w-[282px]">
-                  {card.subtitle.includes('>99% Uptime') ? (
-                    <>
-                      <span className="font-semibold">{card.subtitle.split(' on')[0]}</span>
-                      {card.subtitle.slice(card.subtitle.split(' on')[0].length)}
-                    </>
-                  ) : card.subtitle.includes('battery sales by up to 10%') ? (
-                    <>
-                      {card.subtitle.split('battery sales by up to 10%')[0]}
-                      <span className="font-semibold">battery sales by up to 10%</span>
-                      {card.subtitle.split('battery sales by up to 10%')[1]}
-                    </>
-                  ) : (
-                    card.subtitle
-                  )}
+                  {/* Destaca as strings solicitadas em todos os subtitles */}
+                  {(() => {
+                    let s = card.subtitle;
+                    // Array de strings a destacar
+                    const highlights = [
+                      'Bring online local storage assets,',
+                      '>99% Uptime',
+                      'Enable local storage assets installation,',
+                      'battery sales by up to 10%',
+                      'Manage and optimize storage assets',
+                      'accelerate heat electrification',
+                      'up to 10% bill savings'
+                    ];
+                    // Função para destacar
+                    const parts = [];
+                    let idx = 0;
+                    while (idx < s.length) {
+                      let found = false;
+                      for (const h of highlights) {
+                        if (s.slice(idx).startsWith(h)) {
+                          parts.push(<span className="font-semibold" key={idx}>{h}</span>);
+                          idx += h.length;
+                          found = true;
+                          break;
+                        }
+                      }
+                      if (!found) {
+                        parts.push(s[idx]);
+                        idx++;
+                      }
+                    }
+                    return parts;
+                  })()}
                 </p>
                <div className="space-y-3">
                 {card.listItems.map((item, index) => (

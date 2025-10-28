@@ -17,7 +17,7 @@ const Footer = () => {
 
         <div className="flex flex-wrap justify-center items-center gap-10">
           <div>
-            <a href="/">
+            <a href="https://www.smartenergylab.pt/">
               <ImageWithFallback
                 src={logoFooter}
                 alt="Logo Smart Energy Lab"
