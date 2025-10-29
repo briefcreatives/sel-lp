@@ -230,25 +230,25 @@ const CTASection = () => {
                   <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-sm">✓</span>
                   </div>
-                  <span>Seamless integration — discover how REEF connects with batteries, EV chargers, and heat pumps</span>
+                  <span><b className="font-semibold">Seamless integration</b> — discover how REEF connects with batteries, EV chargers, and heat pumps</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-sm">✓</span>
                   </div>
-                  <span>Live pairing demo — see non-wired device communication in action</span>
+                  <span><b className="font-semibold">Live pairing demo</b> — see non-wired device communication in action</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-sm">✓</span>
                   </div>
-                  <span>Smart edge-cloud platform — monitor and manage multiple assets in one place, through dedicated interfaces and intelligent algorithms</span>
+                  <span><b className="font-semibold">Smart edge-cloud platform</b> — monitor and manage multiple assets in one place, through dedicated interfaces and intelligent algorithms</span>
                 </li>
                  <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-sm">✓</span>
                   </div>
-                  <span>Partnership potential — explore new business models and digital services for your customers, plus co-development opportunities with REEF</span>
+                  <span><b className="font-semibold">Partnership potential</b> — explore new business models and digital services for your customers, plus co-development opportunities with REEF</span>
                 </li>
               </ul>
             </div>

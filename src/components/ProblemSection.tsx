@@ -131,7 +131,7 @@ const ProblemSection = () => {
                   size="lg"
                   className="px-12 py-6 text-xl bg-reef-primary text-white mt-4"
                 >
-                   Book your demo
+                   See it in action
                 </Button>
               </div>
 

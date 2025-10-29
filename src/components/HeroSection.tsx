@@ -7,7 +7,7 @@ import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 
 const HeroSection = () => {
   return (
-    <section className="relative md:pt-[0px] md:pb-[150px] pb-0 pt-24 flex items-center  md:min-h-[100vh] justify-center mt-[63px]">
+    <section className="relative md:pt-[0px] md:pb-[150px] pb-0 pt-24 flex items-center sm:items-start  md:min-h-[100vh] justify-center mt-[63px]">
       <div className="absolute p-5 bg-[#0CC6DE] z-40 w-full top-[-64px] overflow-hidden flex items-start justify-center">
         <div className="w-full flex justify-center">
           <div className="marquee-track">
@@ -37,7 +37,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 flex items-center justify-end mt-[165px] sm:mt-0">
+      <div className="relative z-10 container mx-auto px-6 flex items-center justify-end mt-[165px] sm:mt-10 2xl:mt-14">
         <div className="animate-fade-in-up flex flex-col items-start">
             <div>
            <ImageWithFallback
@@ -61,7 +61,7 @@ const HeroSection = () => {
                   size="lg"
                   className="px-12 py-6 text-xl bg-reef-primary text-white mt-4"
                 >
-                  Schedule your Demo here!
+                  Discover how it works
                 </Button>
               </div>
 

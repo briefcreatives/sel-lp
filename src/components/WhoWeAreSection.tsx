@@ -26,7 +26,7 @@ const WhoWeAreSection = () => {
           <h3 className="text-2xl md:text-3xl font-[500] text-reef-primary mb-6">
             A dynamic team shaping a green energy future at Smart Energy Lab
           </h3>
-          <p className="text-[#00100F] mb-8 leading-relaxed">
+          <p className="text-[#00100F] text-[18px] mb-8 leading-relaxed">
             A team of over 60 highly qualified, energetic, and dedicated individuals that includes innovative thinkers, passionate engineers, insightful analysts, visionary designers, skilled software developers, and strategic business experts
           </p>
 
@@ -36,7 +36,7 @@ const WhoWeAreSection = () => {
                 className="px-8 py-4 bg-[#0ADAEA] text-black hover:text-white"
                 onClick={() => window.open('https://www.smartenergylab.pt/who-we-are/', '_blank')}
               >
-               Discovery more here
+               Try it with us
               </Button>
         </div>
       </div>
