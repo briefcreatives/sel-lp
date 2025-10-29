@@ -86,7 +86,7 @@ const IntegrationsSection = () => {
                 color: '#ffffff'
               }}
             >
-              ⚡ Controlador SEL
+              ⚡ SEL Controller
             </div>
           </div>
           </div>
@@ -97,8 +97,8 @@ const IntegrationsSection = () => {
             <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] text-center">Ultimate compact device</h3>
             <span className="mb-8 text-center">Cutting edge technology</span>
             <motion.div variants={itemVariants}>
-            <div className="space-y-4 bg-reef-primary rounded-xl p-6 text-white">
-              <div className="flex items-center space-x-4 mb-5">
+            <div className="space-y-4 bg-reef-primary rounded-xl p-6 text-white flex flex-col">
+              <div className="flex items-center space-x-4">
                     <div
                       className="rounded-full flex-shrink-0"
                     >
@@ -106,7 +106,7 @@ const IntegrationsSection = () => {
                     </div>
                     <div>
                       <h4
-                        className="text-lg font-[500]"
+                        className="text-xl font-[600]"
                         style={{ color: '#FFFFFF' }}
                       >
                         Local Controllers
@@ -114,7 +114,8 @@ const IntegrationsSection = () => {
 
                     </div>
                   </div>
-                   <span className="font-[500] text-[18px]">Key features</span>
+                  <div className="w-full h-[2px] bg-white mb-5 rounded-lg pt-0 mt-0"></div>
+                   <span className="font-[500] text-[16px]">Key features</span>
               <div className="flex items-start">
 
                 <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
@@ -168,12 +169,13 @@ const IntegrationsSection = () => {
                   <ImageWithFallback src={cloudServicesImage} className="text-white w-8 h-8" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-[500]" style={{ color: '#005751' }}>
+                  <h4 className="text-xl font-[600]" style={{ color: '#005751' }}>
                     Cloud Services
                   </h4>
                 </div>
               </div>
-              <span className="font-[500] text-[18px] mb-4">Interfaces</span>
+              <div className="w-full h-[2px] bg-reef-primary mb-5 rounded-lg"></div>
+              <span className="font-[500] text-[16px] mb-4">Interfaces</span>
               <div className="space-y-4 w-full">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
@@ -197,12 +199,13 @@ const IntegrationsSection = () => {
                   <ImageWithFallback src={algorithmsImage} className="text-white w-8 h-8" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-[500]" style={{ color: '#005751' }}>
+                  <h4 className="text-xl font-[600]" style={{ color: '#005751' }}>
                    Algorithms
                   </h4>
                 </div>
               </div>
-              <span className="font-[500] text-[18px] mb-4">Use Cases</span>
+              <div className="w-full h-[2px] bg-reef-primary mb-5 rounded-lg"></div>
+              <span className="font-[500] text-[16px] mb-4">Use Cases</span>
               <div className="space-y-4 w-full">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
@@ -226,12 +229,13 @@ const IntegrationsSection = () => {
                   <ImageWithFallback src={productFeaturesImage} className="text-white w-8 h-8" />
                 </div>
                 <div>
-                  <h4 className="text-lg font-[500]" style={{ color: '#005751' }}>
+                  <h4 className="text-xl font-[600]" style={{ color: '#005751' }}>
                    Product features
                   </h4>
                 </div>
               </div>
-              <span className="font-[500] text-[18px] mb-4">OEM Integration</span>
+              <div className="w-full h-[2px] bg-reef-primary mb-5 rounded-lg"></div>
+              <span className="font-[500] text-[16px] mb-4">OEM Integration</span>
               <div className="space-y-4 w-full">
                 <div className="flex items-start">
                   <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
@@ -262,7 +266,7 @@ const IntegrationsSection = () => {
                   size="lg"
                   className="px-12 py-6 text-xl bg-reef-primary text-white mt-4"
                 >
-                   Book your demo
+                   See what it can do for you
                 </Button>
               </div>
       </div>
