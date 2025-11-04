@@ -4,10 +4,12 @@ import { Card } from '@/components/ui/card';
 import { Button } from "@/components/ui/button";
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import easyPairingImage from '@/assets/reef_featured_image.png';
-import keyFeaturesImage from '@/assets/key-features.svg';
-import cloudServicesImage from '@/assets/cloud.svg';
-import algorithmsImage from '@/assets/algorithms-1.svg';
-import productFeaturesImage from '@/assets/prod-features.svg';
+import keyFeaturesImage from '@/assets/l-controllers.svg';
+import cloudServicesImage from '@/assets/c-services.png';
+import algorithmsImage from '@/assets/algorithms_1.svg';
+import productFeaturesImage from '@/assets/p-features.png';
+import arrow1 from '@/assets/arrow_1.svg';
+import arrow2 from '@/assets/arrow_2.svg';
 
 const IntegrationsSection = () => {
   const containerVariants = {
@@ -63,7 +65,7 @@ const IntegrationsSection = () => {
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-black mx-auto leading-relaxed text-left"
+            className="text-xl text-black mx-auto leading-relaxed text-center"
           >
             With REEF you have access to a scalable Energy Management Platform, designed to accelerate the development of new energy solutions for Energy Transition, joining Data and Electrons Management tointegrate intelligence, control and to solve multiple practical implementation issues.
           </motion.p>
@@ -92,7 +94,7 @@ const IntegrationsSection = () => {
           </div>
         </div>
 
-       <div className="flex gap-9 items-start justify-center flex-col lg:flex-row">
+       <div className="flex gap-9 items-center md:items-start justify-center flex-col lg:flex-row">
             <div className="min-w-[340px] flex flex-col">
             <h3 className="text-reef-primary text-[26px] font-[500] tracking-[0.52px] text-center">Ultimate compact device</h3>
             <span className="mb-8 text-center">Cutting edge technology</span>
@@ -102,7 +104,7 @@ const IntegrationsSection = () => {
                     <div
                       className="rounded-full flex-shrink-0"
                     >
-                      <ImageWithFallback src={keyFeaturesImage} className=" text-white w-8 h-8" />
+                      <ImageWithFallback src={keyFeaturesImage} className=" text-white w-9 h-9" />
                     </div>
                     <div>
                       <h4
@@ -118,36 +120,46 @@ const IntegrationsSection = () => {
                    <span className="font-[500] text-[16px]">Key features</span>
               <div className="flex items-start">
 
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-white text-[14px] leading-relaxed">
+                <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[rgba(255,255,255,0.50)] mr-2 flex-shrink-0">
+                      <img src={arrow2} alt="" className="w-2 h-2" />
+                    </div>
+                <span className="text-white text-[14px] leading-relaxed font-[500]">
                   The system stays up to date
                 </span>
               </div>
 
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-white text-[14px] leading-relaxed">
+                <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[rgba(255,255,255,0.50)] mr-2 flex-shrink-0">
+                      <img src={arrow2} alt="" className="w-2 h-2" />
+                    </div>
+                <span className="text-white text-[14px] leading-relaxed font-[500]">
                   Robustness against network outages
                 </span>
               </div>
 
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-white text-[14px] leading-relaxed">
+                <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[rgba(255,255,255,0.50)] mr-2 flex-shrink-0">
+                      <img src={arrow2} alt="" className="w-2 h-2" />
+                    </div>
+                <span className="text-white text-[14px] leading-relaxed font-[500]">
                   Compact design and flexible installation
                 </span>
               </div>
 
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-white text-[14px] leading-relaxed">
+                <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[rgba(255,255,255,0.50)] mr-2 flex-shrink-0">
+                      <img src={arrow2} alt="" className="w-2 h-2" />
+                    </div>
+                <span className="text-white text-[14px] leading-relaxed font-[500]">
                   High security standards
                 </span>
               </div>
 
               <div className="flex items-start">
-                <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                <span className="text-white text-[14px] leading-relaxed">
+                <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[rgba(255,255,255,0.50)] mr-2 flex-shrink-0">
+                      <img src={arrow2} alt="" className="w-2 h-2" />
+                    </div>
+                <span className="text-white text-[14px] leading-relaxed font-[500]">
                   Compatible with REEF Actuators for local integration
                 </span>
               </div>
@@ -163,10 +175,12 @@ const IntegrationsSection = () => {
           <span className="mb-8 text-center">Cutting edge technology with intuitive interfaces and optimized algorithms for maximum efficiency</span>
           <div className="grid md:grid-cols-3 gap-3 mb-6 md:mb-0">
             {/* Card 1: Interfaces */}
-            <Card className="bg-[#BFE3DA] rounded-xl p-6 text-black flex flex-col items-start  min-h-[343px]">
+            <Card
+              className="p-6 text-black flex flex-col items-start min-h-[354px] border border-[#76DAD2] rounded-[20px] bg-white max-w-[381px] w-full"
+            >
               <div className="flex items-center space-x-4 mb-5">
                 <div className="rounded-full flex-shrink-0">
-                  <ImageWithFallback src={cloudServicesImage} className="text-white w-8 h-8" />
+                  <ImageWithFallback src={cloudServicesImage} className="text-white w-[33px] h-[39px]" />
                 </div>
                 <div>
                   <h4 className="text-xl font-[600]" style={{ color: '#005751' }}>
@@ -174,29 +188,37 @@ const IntegrationsSection = () => {
                   </h4>
                 </div>
               </div>
-              <div className="w-full h-[2px] bg-reef-primary mb-5 rounded-lg"></div>
-              <span className="font-[500] text-[16px] mb-4">Interfaces</span>
-              <div className="space-y-4 w-full">
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                  <span className="text-black text-[14px] leading-relaxed">Asset Management Portal</span>
+              <div className="w-full h-[2px] bg-[#76DBD3] mb-5 rounded-lg"></div>
+              <span className="font-[600] text-[16px] mb-4">Interfaces</span>
+              <div className="space-y-1 w-full">
+                <div className="flex items-start mt-1">
+                  <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[#BFE3DA] mr-2 flex-shrink-0">
+                      <img src={arrow1} alt="" className="w-2 h-2" />
+                    </div>
+                  <span className="text-black text-[14px] leading-relaxed font-[500]">Asset Management Portal</span>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                  <span className="text-black text-[14px] leading-relaxed">Commissioning Portal</span>
+                <div className="flex items-start mt-1">
+                  <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[#BFE3DA] mr-2 flex-shrink-0">
+                      <img src={arrow1} alt="" className="w-2 h-2" />
+                    </div>
+                  <span className="text-black text-[14px] leading-relaxed font-[500]">Commissioning Portal</span>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                  <span className="text-black text-[14px] leading-relaxed">User Web APP</span>
+                <div className="flex items-start mt-1">
+                  <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[#BFE3DA] mr-2 flex-shrink-0">
+                      <img src={arrow1} alt="" className="w-2 h-2" />
+                    </div>
+                  <span className="text-black text-[14px] leading-relaxed font-[500]">User Web APP</span>
                 </div>
               </div>
             </Card>
 
             {/* Card 2: Use Cases */}
-            <Card className="bg-[#BFE3DA] rounded-xl p-6 text-black flex flex-col items-start min-h-[343px]">
+            <Card
+              className="p-6 text-black flex flex-col items-start min-h-[354px] border border-[#76DAD2] rounded-[20px] bg-white max-w-[381px] w-full"
+            >
               <div className="flex items-center space-x-4 mb-5">
                 <div className="rounded-full flex-shrink-0">
-                  <ImageWithFallback src={algorithmsImage} className="text-white w-8 h-8" />
+                  <ImageWithFallback src={algorithmsImage} className="text-white w-9 h-9" />
                 </div>
                 <div>
                   <h4 className="text-xl font-[600]" style={{ color: '#005751' }}>
@@ -204,29 +226,37 @@ const IntegrationsSection = () => {
                   </h4>
                 </div>
               </div>
-              <div className="w-full h-[2px] bg-reef-primary mb-5 rounded-lg"></div>
-              <span className="font-[500] text-[16px] mb-4">Use Cases</span>
-              <div className="space-y-4 w-full">
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                  <span className="text-black text-[14px] leading-relaxed">Energy and Power Optimization for DHW</span>
+              <div className="w-full h-[2px] bg-[#76DBD3] mb-5 rounded-lg"></div>
+              <span className="font-[600] text-[16px] mb-4">Use Cases</span>
+              <div className="space-y-1 w-full">
+                <div className="flex items-start mt-1">
+                  <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[#BFE3DA] mr-2 flex-shrink-0">
+                      <img src={arrow1} alt="" className="w-2 h-2" />
+                    </div>
+                  <span className="text-black text-[14px] leading-relaxed font-[500]">Energy and Power Optimization for DHW</span>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                  <span className="text-black text-[14px] leading-relaxed">Smart Charging and Load Balancing on EV</span>
+                <div className="flex items-start mt-1">
+                  <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[#BFE3DA] mr-2 flex-shrink-0">
+                      <img src={arrow1} alt="" className="w-2 h-2" />
+                    </div>
+                  <span className="text-black text-[14px] leading-relaxed font-[500]">Smart Charging and Load Balancing on EV</span>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                  <span className="text-black text-[14px] leading-relaxed">Battery Optimized Control</span>
+                <div className="flex items-start mt-1">
+                  <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[#BFE3DA] mr-2 flex-shrink-0">
+                      <img src={arrow1} alt="" className="w-2 h-2" />
+                    </div>
+                  <span className="text-black text-[14px] leading-relaxed font-[500]">Battery Optimized Control</span>
                 </div>
               </div>
             </Card>
 
             {/* Card 3: OEM Integrations */}
-            <Card className="bg-[#BFE3DA] rounded-xl p-6 text-black flex flex-col items-start min-h-[343px]">
+            <Card
+              className="p-6 text-black flex flex-col items-start min-h-[354px] border border-[#76DAD2] rounded-[20px] bg-white max-w-[381px] w-full"
+            >
               <div className="flex items-center space-x-4 mb-5">
                 <div className="rounded-full flex-shrink-0">
-                  <ImageWithFallback src={productFeaturesImage} className="text-white w-8 h-8" />
+                  <ImageWithFallback src={productFeaturesImage} className="text-white w-[38px] h-[35px]" />
                 </div>
                 <div>
                   <h4 className="text-xl font-[600]" style={{ color: '#005751' }}>
@@ -234,20 +264,26 @@ const IntegrationsSection = () => {
                   </h4>
                 </div>
               </div>
-              <div className="w-full h-[2px] bg-reef-primary mb-5 rounded-lg"></div>
-              <span className="font-[500] text-[16px] mb-4">OEM Integration</span>
-              <div className="space-y-4 w-full">
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                  <span className="text-black text-[14px] leading-relaxed">DHW Manufacturers</span>
+              <div className="w-full h-[2px] bg-[#76DBD3] mb-5 rounded-lg"></div>
+              <span className="font-[600] text-[16px] mb-4">OEM Integration</span>
+              <div className="space-y-1 w-full">
+                <div className="flex items-start mt-1">
+                  <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[#BFE3DA] mr-2 flex-shrink-0">
+                      <img src={arrow1} alt="" className="w-2 h-2" />
+                    </div>
+                  <span className="text-black text-[14px] leading-relaxed font-[500]">DHW Manufacturers</span>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                  <span className="text-black text-[14px] leading-relaxed">EV Charging Manufacturers</span>
+                <div className="flex items-start mt-1">
+                  <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[#BFE3DA] mr-2 flex-shrink-0">
+                      <img src={arrow1} alt="" className="w-2 h-2" />
+                    </div>
+                  <span className="text-black text-[14px] leading-relaxed font-[500]">EV Charging Manufacturers</span>
                 </div>
-                <div className="flex items-start">
-                  <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                  <span className="text-black text-[14px] leading-relaxed">PV and Battery Inverter Manufacturers</span>
+                <div className="flex items-start mt-1">
+                  <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[#BFE3DA] mr-2 flex-shrink-0">
+                      <img src={arrow1} alt="" className="w-2 h-2" />
+                    </div>
+                  <span className="text-black text-[14px] leading-relaxed font-[500]">PV and Battery Inverter Manufacturers</span>
                 </div>
               </div>
             </Card>

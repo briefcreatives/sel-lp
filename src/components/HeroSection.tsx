@@ -3,19 +3,20 @@ import { Badge } from "@/components/ui/badge";
 import heroImage from "@/assets/bg-hero-sel.png";
 import reefVideo from "@/assets/reef-video.mp4";
 import logoReef from '@/assets/reef-black.png';
+import enlitLogo from '@/assets/enlit_europe.png';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 
 const HeroSection = () => {
   return (
     <section className="relative md:pt-[0px] md:pb-[150px] pb-0 pt-24 flex items-center sm:items-start  md:min-h-[100vh] justify-center mt-[63px]">
-      <div className="absolute p-5 bg-[#0CC6DE] z-40 w-full top-[-64px] overflow-hidden flex items-start justify-center">
+      <div className="absolute p-5 bg-[#13294B] z-40 w-full top-[-64px] overflow-hidden flex items-start justify-center">
         <div className="w-full flex justify-center">
           <div className="marquee-track">
             <span
-              className="block whitespace-nowrap text-black text-[16px] font-[500] marquee-text"
+              className="block whitespace-nowrap text-white text-[16px] font-[500] marquee-text"
               style={{ display: 'inline-block', minWidth: '100vw', textAlign: 'center' }}
             >
-              Enlit 2025 18-20 November visit our booth 5.D63 and check our sessions Smart Homes: Catalysts for Renewable Energy Integration, on the 18 th and Energy 4.0 Technologies: IIoT and Cloud on the 19th
+              <img src={enlitLogo} alt="Enlit Europe" className="inline-block h-6 relative bottom-1 mr-2" /> 2025 18-20 November visit our booth 5.D63 and check our sessions: Smart Homes Catalysts for Renewable Energy Integration, on the 18 th and Energy 4.0 Technologies: IIoT and Cloud on the 19th
             </span>
           </div>
         </div>
