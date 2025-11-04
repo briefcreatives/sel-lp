@@ -2,6 +2,7 @@ import { TrendingUp, AlertTriangle, Zap, Car, Sun, Battery, ArrowLeftRight, Hand
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ImageWithFallback } from "@/components/figma/ImageWithFallback";
+import arrow1 from "@/assets/arrow_1.svg";
 
 const ProblemSection = () => {
   const marketStats = [
@@ -15,7 +16,8 @@ const ProblemSection = () => {
   {
     id: 1,
     title: "Connect",
-    subtitle: "Bring online local storage assets, ensuring seamless communication with the cloud\n>99% Uptime on your Asset Portfolio",
+    subtitle: "Bring online local storage assets, ensuring seamless communication with the cloud.",
+    highlight: ">99% Uptime\non your Asset Portfolio",
     listItems: [
       "Universal Compatibility",
       "Always Connect",
@@ -25,7 +27,8 @@ const ProblemSection = () => {
   {
     id: 2,
     title: "Easy Pairing",
-    subtitle: "Enable local storage assets installation, breaking physical links between devices\nBoost your Solar battery sales by up to 10%",
+    subtitle: "Enable local storage assets installation, breaking physical links between devices.",
+    highlight: "Boost your Solar\nbattery sales by up to 10%",
     listItems: [
       "Easy Setup",
       "Higher Conversion Rate"
@@ -34,7 +37,8 @@ const ProblemSection = () => {
   {
     id: 3,
     title: "Home Manager",
-    subtitle: "Manage and optimize storage assets to create customer and system value and accelerate heat electrification. \n Provide up to 10% bill savings for your customers and unlock new flexibility use cases",
+    subtitle: "Manage and optimize storage assets to create customer and system value and accelerate heat electrification.",
+    highlight: "Provide up to 10% bill\nsavings for your customers and unlock new flexibility use cases",
     listItems: [
       "Local Intelligence",
       "Cloud Control",
@@ -65,51 +69,68 @@ const ProblemSection = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
             {cardsData.map((card) => (
-              <div key={card.id} className="p-[30px] border border-reef-blue">
+              <div
+                key={card.id}
+                className="p-[30px] border border-[#76DAD2] rounded-[20px]"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(255, 255, 255, 0.24) 0%, rgba(191, 227, 218, 0.24) 63.94%)",
+                }}
+              >
                 <h2 className="text-reef-primary text-[26px] font-semibold leading-[24px] mb-5">{card.title}</h2>
-                <p className="mb-[13px] text-[18px] leading-[26px] font-medium max-w-[282px]">
-                  {/* Destaca as strings solicitadas e quebra linha em \n */}
-                  {(() => {
-                    let s = card.subtitle;
-                    const highlights = [
-                      'Bring online local storage assets,',
-                      '>99% Uptime',
-                      'Enable local storage assets installation,',
-                      'battery sales by up to 10%',
-                      'Manage and optimize storage assets',
-                      'accelerate heat electrification',
-                      'up to 10% bill savings'
-                    ];
-                    const parts = [];
-                    let idx = 0;
-                    while (idx < s.length) {
-                      if (s[idx] === '\n') {
-                        parts.push(<br key={idx} />);
-                        idx++;
-                        continue;
-                      }
-                      let found = false;
-                      for (const h of highlights) {
-                        if (s.slice(idx).startsWith(h)) {
-                          parts.push(<span className="font-semibold" key={idx}>{h}</span>);
-                          idx += h.length;
-                          found = true;
-                          break;
-                        }
-                      }
-                      if (!found) {
-                        parts.push(s[idx]);
-                        idx++;
-                      }
-                    }
-                    return parts;
-                  })()}
+                <p className="mb-[13px] text-[16px] leading-[22px] font-medium max-w-[282px] whitespace-pre-line">
+                  {card.subtitle}
                 </p>
+                {card.highlight && (
+                  <div
+                    className="flex h-[82px] px-[15px] py-[8px] justify-center items-center gap-[10px] rounded-[15px] bg-[#0CC6DE] mb-4"
+                  >
+                    <span
+                      className="text-[16px] font-normal leading-[22px] tracking-[0.48px] text-[#005751] text-center"
+                    >
+                      {(() => {
+                        const s = card.highlight;
+                        const bolds = [
+                          '>99% Uptime',
+                          'battery sales by up to 10%',
+                          'Provide up to 10% bill',
+                        ];
+                        const parts: (string | JSX.Element)[] = [];
+                        let idx = 0;
+                        while (idx < s.length) {
+                          if (s[idx] === '\n') {
+                            parts.push(<br key={idx} />);
+                            idx++;
+                            continue;
+                          }
+                          let matched = false;
+                          for (const b of bolds) {
+                            if (s.slice(idx).startsWith(b)) {
+                              parts.push(
+                                <span key={`b-${idx}`} className="font-[600]">{b}</span>
+                              );
+                              idx += b.length;
+                              matched = true;
+                              break;
+                            }
+                          }
+                          if (!matched) {
+                            parts.push(s[idx]);
+                            idx++;
+                          }
+                        }
+                        return parts;
+                      })()}
+                    </span>
+                  </div>
+                )}
                <div className="space-y-3">
                 {card.listItems.map((item, index) => (
                   <div key={index} className="flex items-start">
-                    <div className="w-2 h-2 bg-[#0adaea] rounded-full mr-4 mt-2 flex-shrink-0"></div>
-                    <span className="text-black text-lg leading-relaxed">
+                    <div className="flex p-[4px] relative top-1 items-center gap-[5px] rounded-[7px] bg-[#BFE3DA] mr-2 flex-shrink-0">
+                      <img src={arrow1} alt="" className="w-2 h-2" />
+                    </div>
+                    <span className="text-black text-[16px] font-[600] leading-[26px] tracking-[0.42px]">
                       {item}
                     </span>
                   </div>

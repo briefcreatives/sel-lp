@@ -96,10 +96,10 @@ const CTASection = () => {
     <section className="py-20 reef-accent-section" id="schedule-demo">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-           <h2 className="reef-section-title">
-             Discover How REEF Can <span className="text-reef-primary">Transform Your Business</span>
+           <h2 className="text-reef-primary font-[500] text-[28px] tracking-[0.56px] mb-5">
+             Discover How REEF Can Transform Your Business
            </h2>
-           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+           <p className="text-xl text-black mb-8 max-w-3xl mx-auto">
              Smart Energy will be present at Enlit 2025 in Bilbau, a global forum focused on the energy transition and conecting industries to drive the shift toward a decabornized evergy system.
            </p>
         </div>

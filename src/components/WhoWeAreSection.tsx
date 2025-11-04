@@ -27,7 +27,9 @@ const WhoWeAreSection = () => {
             A dynamic team shaping a green energy future at Smart Energy Lab
           </h3>
           <p className="text-[#00100F] text-[18px] mb-8 leading-relaxed">
-            A team of over 60 highly qualified, energetic, and dedicated individuals that includes innovative thinkers, passionate engineers, insightful analysts, visionary designers, skilled software developers, and strategic business experts
+            Smart Energy LAB is an organization for developing any new product, service, or process that accelerates the business of companies offering New Energy Downstream solutions. We do it by combining three levers of acceleration of the end-user energy transition - Client adoption, Transactional cost reduction and Technology adaptation for delivery – and boosting a highly qualified team with competencies in Business, Customer Experience and Technology.
+<br /><br />
+ Smart Energy Lab has been investing and solving problems for energy companies in three focus areas: EV charging, EMS to implement complex use cases and flexibility offerings.
           </p>
 
             <Button
