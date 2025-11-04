@@ -62,9 +62,9 @@ const ProblemSection = () => {
             Why Choose REEF
           </h3>
 
-          <p className="mb-6 md:px-4 text-center text-[16px]">REEF Energy Management redefines how distributed energy resources are deployed and operated. It connects and controls any solar PV, battery, EV or heat pump - no matter the brand - through a robust edge-cloud architecture that works even when the internet doesn’t.</p>
+          <p className="mb-6 md:px-4 text-center text-[18px]">REEF Energy Management redefines how distributed energy resources are deployed and operated. It connects and controls any solar PV, battery, EV or heat pump - no matter the brand - through a robust edge-cloud architecture that works even when the internet doesn’t.</p>
 
-          <p className="text-black text-[16px] font-[500] md:mb-16 mb-8 md:px-4 text-center">By removing cloud dependencies and simplifying installations, REEF helps utilities, EPCs and OEMs scale faster, lower costs, and offer new digital services to their customers.</p>
+          <p className="text-black text-[18px] font-[500] md:mb-16 mb-8 md:px-4 text-center">By removing cloud dependencies and simplifying installations, REEF helps utilities, EPCs and OEMs scale faster, lower costs, and offer new digital services to their customers.</p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
@@ -83,10 +83,10 @@ const ProblemSection = () => {
                 </p>
                 {card.highlight && (
                   <div
-                    className="flex h-[82px] px-[15px] py-[8px] justify-center items-center gap-[10px] rounded-[15px] bg-[#0CC6DE] mb-4"
+                    className="flex px-[15px] py-[8px] justify-center items-center gap-[10px] rounded-[15px] bg-[#0CC6DE] mb-4"
                   >
                     <span
-                      className="text-[16px] font-normal leading-[22px] tracking-[0.48px] text-[#005751] text-center"
+                      className="text-[16px] leading-[22px] font-[500] tracking-[0.48px] text-[#005751] text-center"
                     >
                       {(() => {
                         const s = card.highlight;
@@ -107,7 +107,7 @@ const ProblemSection = () => {
                           for (const b of bolds) {
                             if (s.slice(idx).startsWith(b)) {
                               parts.push(
-                                <span key={`b-${idx}`} className="font-[600]">{b}</span>
+                                <span key={`b-${idx}`} className="font-[700]">{b}</span>
                               );
                               idx += b.length;
                               matched = true;

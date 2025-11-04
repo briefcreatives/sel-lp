@@ -35,7 +35,7 @@ const WhoWeAreSection = () => {
             <Button
                 variant="default"
                 size="lg"
-                className="px-8 py-4 bg-[#0ADAEA] text-black hover:text-white"
+                className="px-8 text-[20px] py-4 bg-[#0ADAEA] text-black hover:text-white"
                 onClick={() => window.open('https://www.smartenergylab.pt/who-we-are/', '_blank')}
               >
                discover more about the team here
