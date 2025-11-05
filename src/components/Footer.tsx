@@ -67,7 +67,7 @@ const Footer = () => {
         {/* Bottom CTA */}
         <div className="text-center mt-8">
           <p className="text-[#d6ffe5] text-lg">
-           Copyright © 2025 Smart energy lab | All Rights Reserved | <a href="#" className="text-reef-secondary">Privacy & Cookie Policy</a>
+           Copyright © 2025 Smart energy lab | All Rights Reserved | <a href="https://www.smartenergylab.pt/privacy-policy/" target="_blank" className="text-reef-secondary">Privacy & Cookie Policy</a>
           </p>
         </div>
       </div>
