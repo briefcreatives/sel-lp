@@ -2,6 +2,7 @@
 
 .marquee-track {
   display: flex;
+  align-items: center;
   width: 200vw;
   animation: marquee-loop 40s linear infinite;
 }
