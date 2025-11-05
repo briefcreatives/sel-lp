@@ -96,7 +96,7 @@ const CTASection = () => {
     <section className="py-20 reef-accent-section" id="schedule-demo">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-           <h2 className="text-reef-primary font-[500] text-[28px] tracking-[0.56px] mb-5">
+           <h2 className="text-reef-primary font-[500] text-[30px] tracking-[0.56px] mb-5">
              Discover How REEF Can Transform Your Business
            </h2>
            <p className="text-xl text-black mb-8 max-w-3xl mx-auto">
