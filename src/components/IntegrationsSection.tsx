@@ -59,13 +59,13 @@ const IntegrationsSection = () => {
         >
           <motion.h2
             variants={itemVariants}
-            className="text-4xl md:text-5xl mb-9 text-[#01534f] font-[500]"
+            className="text-[30px] mb-9 text-[#01534f] font-[500]"
           >
            Explore SEL Platform’s Capabilities
           </motion.h2>
           <motion.p
             variants={itemVariants}
-            className="text-xl text-black mx-auto leading-relaxed text-center"
+            className="text-[18px] text-black mx-auto leading-relaxed text-center"
           >
             With REEF you have access to a scalable Energy Management Platform, designed to accelerate the development of new energy solutions for Energy Transition, joining Data and Electrons Management tointegrate intelligence, control and to solve multiple practical implementation issues.
           </motion.p>

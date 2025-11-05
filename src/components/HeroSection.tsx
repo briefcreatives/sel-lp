@@ -11,16 +11,16 @@ const HeroSection = () => {
     <section className="relative md:pt-[0px] md:pb-[150px] pb-0 pt-24 flex items-center sm:items-start  md:min-h-[100vh] justify-center mt-[63px]">
       <div className="absolute p-5 bg-[#13294B] z-40 w-full top-[-64px] overflow-hidden flex items-center">
         <div className="w-full overflow-hidden h-[44px] flex items-center">
-          <div className="marquee-track">
+          <div className="marquee-track gap-8 md:gap-16">
             <span
-              className="block whitespace-nowrap text-white text-[14px] sm:text-[16px] font-[500] marquee-text flex-none"
+              className="block whitespace-nowrap text-white text-[14px] sm:text-[16px] font-[500] marquee-text flex-none pr-8 md:pr-16"
               style={{ display: 'inline-block', minWidth: '100vw', textAlign: 'center' }}
             >
               <img src={enlitLogo} alt="Enlit Europe" className="inline-block h-6 relative bottom-1 mr-2" /> 2025 18-20 November visit our booth 5.D63 and check our sessions: Smart Homes Catalysts for Renewable Energy Integration, on the 18 th and Energy 4.0 Technologies: IIoT and Cloud on the 19th
             </span>
             <span
               aria-hidden="true"
-              className="block whitespace-nowrap text-white text-[14px] sm:text-[16px] font-[500] marquee-text flex-none"
+              className="block whitespace-nowrap text-white text-[14px] sm:text-[16px] font-[500] marquee-text flex-none pr-8 md:pr-16"
               style={{ display: 'inline-block', minWidth: '100vw', textAlign: 'center' }}
             >
               <img src={enlitLogo} alt="" className="inline-block h-6 relative bottom-1 mr-2" /> 2025 18-20 November visit our booth 5.D63 and check our sessions: Smart Homes Catalysts for Renewable Energy Integration, on the 18 th and Energy 4.0 Technologies: IIoT and Cloud on the 19th
