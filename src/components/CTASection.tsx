@@ -1,10 +1,10 @@
-import { Calendar, Mail, Phone, Building, MessageSquare, MapPin } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { useState } from "react";
+import { trackFormSubmitAttempt, trackFormSubmitError, trackFormSubmitSuccess, trackBookingsOpen, trackBookingsIframeLoaded, trackBookingsClose } from '@/lib/gtm';
 import { useToast } from "@/hooks/use-toast";
 
 const CTASection = () => {
@@ -20,6 +20,7 @@ const CTASection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    trackFormSubmitAttempt('schedule_demo')
 
     // Basic validation
     if (!formData.nome || !formData.email || !formData.empresa) {
@@ -28,6 +29,7 @@ const CTASection = () => {
         description: "Please fill in all required fields.",
         variant: "destructive"
       });
+      trackFormSubmitError('schedule_demo', 'validation_missing_required')
       return;
     }
 
@@ -39,43 +41,47 @@ const CTASection = () => {
         description: "Please enter a valid email address.",
         variant: "destructive"
       });
+      trackFormSubmitError('schedule_demo', 'validation_invalid_email')
       return;
     }
 
     try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
-      if (response.ok) {
-        toast({
-          title: "Recebido!",
-          description: "Entraremos em contato em breve.",
-        });
-        setFormData({
-          nome: '',
-          email: '',
-          empresa: '',
-          posicao: '',
-          pais: '',
-          mensagem: ''
-        });
-      } else {
-        toast({
-          title: "Erro ao enviar",
-          description: "Tente novamente mais tarde.",
-          variant: "destructive"
-        });
+
+      const responseData = await response.json();
+
+      if (!response.ok) {
+        throw new Error(responseData.error || 'Failed to send email');
       }
-    } catch (error) {
+
       toast({
-        title: "Erro de conexão",
-        description: "Não foi possível enviar o formulário.",
+        title: "Received!",
+        description: "We will be in touch soon.",
+      });
+      trackFormSubmitSuccess('schedule_demo')
+      setFormData({
+        nome: '',
+        email: '',
+        empresa: '',
+        posicao: '',
+        pais: '',
+        mensagem: ''
+      });
+    } catch (error) {
+      console.error('[Form] Error:', error);
+      toast({
+        title: "Erro ao enviar",
+        description: error instanceof Error ? error.message : "Tente novamente mais tarde.",
         variant: "destructive"
       });
+      trackFormSubmitError('schedule_demo', 'sendgrid_error')
     }
   };
 
@@ -90,6 +96,7 @@ const CTASection = () => {
 
   const handleClick = () => {
     setOpen(true);
+    trackBookingsOpen();
   };
 
   return (
@@ -194,7 +201,7 @@ const CTASection = () => {
                 Or use our online booking system:
               </p>
 
-              <Dialog open={open} onOpenChange={setOpen}>
+              <Dialog open={open} onOpenChange={(v) => { setOpen(v); if(!v) trackBookingsClose(); }}>
               <DialogTrigger asChild>
                 <Button variant="outline" className="w-full" onClick={handleClick}>
                   <Calendar className="w-4 h-4 mr-2" />
@@ -212,6 +219,7 @@ const CTASection = () => {
                   height="100%"
                   scrolling="yes"
                   style={{ border: "0", minHeight: "calc(80vh - 60px)" }}
+                  onLoad={() => trackBookingsIframeLoaded()}
                 ></iframe>
               </DialogContent>
             </Dialog>
