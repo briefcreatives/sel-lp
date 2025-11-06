@@ -5,6 +5,7 @@ import reefVideo from "@/assets/reef-video.mp4";
 import logoReef from '@/assets/reef-black.png';
 import enlitLogo from '@/assets/enlit_europe.png';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
+import { trackButtonClick } from '@/lib/gtm';
 
 const HeroSection = () => {
   return (
@@ -63,6 +64,7 @@ const HeroSection = () => {
               <div className="flex justify-center">
                 <Button
                   onClick={() => {
+                    trackButtonClick('discover_how_it_works', 'hero')
                     scrollTo({ top: document.getElementById("schedule-demo").offsetTop, behavior: 'smooth' });
                   }}
                   variant="default"

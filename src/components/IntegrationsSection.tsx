@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Thermometer, Car, Battery } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from "@/components/ui/button";
+import { trackButtonClick } from '@/lib/gtm';
 import { ImageWithFallback } from '@/components/figma/ImageWithFallback';
 import easyPairingImage from '@/assets/reef_featured_image.png';
 import keyFeaturesImage from '@/assets/l-controllers.svg';
@@ -296,6 +297,7 @@ const IntegrationsSection = () => {
          <div className="mx-auto flex justify-center">
                 <Button
                   onClick={() => {
+                    trackButtonClick('see_what_it_can_do_for_you', 'integrations')
                     scrollTo({ top: document.getElementById("schedule-demo").offsetTop, behavior: 'smooth' });
                   }}
                   variant="default"

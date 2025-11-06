@@ -1,110 +1,114 @@
-# REEF Energy Management - Landing Page
 
-Landing page para REEF Energy Management, uma solução definitiva para gestão de energia distribuída desenvolvida pela Smart Energy Lab.
+## 🚀 Getting Started
 
-## 📋 Descrição do Projeto
+### Prerequisites
 
-Landing page moderna e responsiva construída com React, TypeScript, Vite e Tailwind CSS. Apresenta o sistema REEF que permite integrar e controlar qualquer ativo energético - painéis solares, baterias, bombas de calor e carregadores EV - independentemente do fabricante.
+- **Node.js**: ^24.9.0 (defined in `.nvmrc` and `package.json`)
+- **Yarn**: Recommended package manager
 
-### Características Principais
+### Installation
 
-- ⚡ **Hero Section** - Apresentação impactante com imagem de background e CTA
-- 🎯 **Why Choose REEF** - Grid de 6 benefícios principais do sistema
-- 🔌 **Easy Pairing** - Funcionalidade revolucionária de emparelhamento
-- 🔗 **Integrations** - Compatibilidade universal com equipamentos
-- 👥 **About Section** - Informação sobre a Smart Energy Lab
-- 📞 **CTA Section** - Call-to-action para agendamento de demo
-- 📱 **Responsive Design** - Totalmente adaptado para mobile, tablet e desktop
-
-## 🛠️ Stack Tecnológico
-
-- **Framework**: React 18.3.1
-- **Build Tool**: Vite 5.4.19
-- **Linguagem**: TypeScript 5.8.3
-- **Styling**: Tailwind CSS 3.4.17
-- **UI Components**: shadcn/ui (Radix UI primitives)
-- **Routing**: React Router DOM 6.30.1
-- **Forms**: React Hook Form 7.61.1 + Zod 3.25.76
-- **Icons**: Lucide React 0.462.0
-- **Animations**: Framer Motion 12.23.22
-- **State Management**: TanStack Query 5.83.0
-
-## 🎨 Paleta de Cores REEF
-
-### Cores Principais
-
-| Nome | HSL | HEX | Uso |
-|------|-----|-----|-----|
-| **reef-primary** | `176 98% 16%` | `#01534f` | Verde escuro para títulos e elementos principais |
-| **reef-secondary** | `186 90% 58%` | `#0adaea` | Azul ciano para highlights e CTAs |
-| **reef-accent** | `138 100% 92%` | `#d6ffe5` | Verde claro para seções alternativas |
-| **reef-text** | `0 0% 0%` | `#000000` | Preto para textos |
-| **reef-background** | `0 0% 100%` | `#ffffff` | Branco para backgrounds |
-
-### Cores do Sistema
-
-- **Border**: `176 30% 85%` - Bordas sutis
-- **Input**: `176 30% 95%` - Backgrounds de inputs
-- **Muted**: `138 100% 92%` - Textos secundários
-- **Destructive**: `0 84.2% 60.2%` - Ações destrutivas
-
-### Gradientes Personalizados
-
-```css
---gradient-hero: linear-gradient(135deg, hsl(176 98% 16%), hsl(186 90% 58%));
---gradient-accent: linear-gradient(180deg, hsl(0 0% 100%), hsl(138 100% 92%));
-```
-
-### Sombras
-
-```css
---shadow-reef: 0 10px 40px -15px hsl(176 98% 16% / 0.3);
---shadow-glow: 0 0 30px hsl(186 90% 58% / 0.4);
-```
-
-## 🚀 Começar
-
-### Pré-requisitos
-
-- **Node.js**: ^24.9.0 (definido em `.nvmrc` e `package.json`)
-- **Yarn**: Gerenciador de pacotes recomendado
-
-### Instalação
-
-1. **Clone o repositório**
+1. **Clone the repository**
 ```bash
 git clone <repository-url>
-cd lp
+cd sel-lp
 ```
 
-2. **Use a versão correta do Node.js**
+2. **Use the correct Node.js version**
 ```bash
 nvm use
 ```
 
-3. **Instale as dependências**
+3. **Install dependencies**
 ```bash
 yarn install
 ```
 
-### Comandos Disponíveis
+4. **Configure environment variables**
+
+Create a `.env.local` file in the root directory based on `.env.example`:
 
 ```bash
-# Desenvolvimento - inicia servidor em http://[::]:8080
+cp .env.example .env.local
+```
+
+Edit `.env.local` and add your credentials:
+
+```bash
+# SendGrid API Key (get it from https://app.sendgrid.com/settings/api_keys)
+SENDGRID_API_KEY=your_sendgrid_api_key_here
+
+# Email addresses (must be verified in SendGrid)
+TO_EMAIL=destination@example.com
+FROM_EMAIL=sender@example.com
+
+# Google Tag Manager ID (optional)
+VITE_GTM_ID=GTM-XXXXXXX
+```
+
+**Important Setup Notes:**
+
+**SendGrid:**
+- Get your API key from [SendGrid Dashboard](https://app.sendgrid.com/settings/api_keys)
+- Verify your sender email in [Sender Authentication](https://app.sendgrid.com/settings/sender_auth)
+- Both `TO_EMAIL` and `FROM_EMAIL` must be verified in SendGrid to avoid 403 errors
+
+**Google Tag Manager (Optional):**
+- Get your GTM ID from [Google Tag Manager](https://tagmanager.google.com/)
+- The GTM ID is injected into `index.html` during build via Vite
+- If not set, defaults to `GTM-PRB8MJVT`
+
+### Available Commands
+
+#### Frontend Development
+
+```bash
+# Start frontend development server at http://[::]:8080
 yarn dev
 
-# Build para produção
+# Build for production
 yarn build
 
-# Build para desenvolvimento
+# Build for development
 yarn build:dev
 
-# Preview da build de produção
+# Preview production build
 yarn preview
 
-# Lint do código
+# Lint code
 yarn lint
 ```
+
+#### Backend Development (Contact Form API)
+
+The project includes a Node.js Express server for handling contact form submissions via SendGrid.
+
+```bash
+# Start backend server at http://localhost:3001
+node server.js
+```
+
+**Running Both Frontend and Backend:**
+
+You need to run both servers simultaneously during development:
+
+```bash
+# Terminal 1 - Backend API
+node server.js
+
+# Terminal 2 - Frontend
+yarn dev
+```
+
+The Vite dev server (frontend) is configured to proxy `/api` requests to the backend server at `http://localhost:3001`.
+
+**Backend Features:**
+- Email sending via SendGrid
+- CORS enabled
+- JSON body parsing
+- Environment variables from `.env.local`
+- Request logging
+- Error handling with detailed SendGrid error messages
 
 ### Estrutura de Pastas
 
@@ -163,21 +167,92 @@ src/
 
 ## 🌐 Deployment
 
-O projeto está configurado para build estático. Após executar `yarn build`, a pasta `dist/` conterá todos os arquivos prontos para deploy em qualquer serviço de hosting estático (Vercel, Netlify, etc.).
+### Frontend Deployment
 
-## 📝 Notas Importantes
+The project is configured for static build. After running `yarn build`, the `dist/` folder will contain all files ready for deployment to any static hosting service (Vercel, Netlify, etc.).
 
-- Não há framework de testes configurado
-- O projeto usa `yarn` como package manager
-- Dark mode está implementado mas a landing page usa principalmente light mode
-- Algumas seções estão comentadas em `Index.tsx` (SolutionSection, IntelligenceSection, AboutSection)
+### Backend API Deployment
 
-## 🤝 Contribuir
+The backend API (`server.js`) can be deployed to platforms like:
+- **Vercel** (recommended - uses `/api/send-email.js` serverless function)
+- **Heroku**
+- **Railway**
+- **DigitalOcean App Platform**
+- Any Node.js hosting service
 
-1. Execute `yarn lint` antes de commit
-2. Siga as convenções de código estabelecidas
-3. Use as classes REEF customizadas para consistência visual
+### Environment Variables for Production
 
-## 📄 Licença
+**CRITICAL:** Never commit `.env.local` to your repository. Always configure environment variables through your hosting platform's dashboard.
 
-Projeto desenvolvido pela Smart Energy Lab para REEF Energy Management.
+#### Vercel Deployment
+
+1. **Push your code to GitHub/GitLab/Bitbucket**
+
+2. **Import project in Vercel Dashboard**
+
+3. **Configure Environment Variables** in Project Settings → Environment Variables:
+
+```
+SENDGRID_API_KEY=your_actual_sendgrid_api_key
+TO_EMAIL=your_destination_email@example.com
+FROM_EMAIL=your_verified_sender@example.com
+VITE_GTM_ID=GTM-XXXXXXX
+```
+
+4. **Deploy**
+   - Vercel will automatically use `/api/send-email.js` for the API endpoint
+   - Frontend will be deployed as static files
+   - Environment variables are securely injected at runtime
+
+#### Netlify Deployment
+
+1. **Push your code to GitHub/GitLab/Bitbucket**
+
+2. **Create new site in Netlify Dashboard**
+
+3. **Configure Environment Variables** in Site Settings → Build & Deploy → Environment:
+
+```
+SENDGRID_API_KEY=your_actual_sendgrid_api_key
+TO_EMAIL=your_destination_email@example.com
+FROM_EMAIL=your_verified_sender@example.com
+VITE_GTM_ID=GTM-XXXXXXX
+```
+
+4. **Configure Netlify Functions** (if using serverless approach)
+   - Move `/api/send-email.js` to `/netlify/functions/`
+   - Update import to use CommonJS syntax
+
+#### Other Platforms (Heroku, Railway, etc.)
+
+1. **Set environment variables** through platform CLI or dashboard:
+
+```bash
+# Example for Heroku
+heroku config:set SENDGRID_API_KEY=your_key
+heroku config:set TO_EMAIL=destination@example.com
+heroku config:set FROM_EMAIL=sender@example.com
+heroku config:set VITE_GTM_ID=GTM-XXXXXXX
+```
+
+2. **Add `PORT` variable** (if required by platform):
+```bash
+heroku config:set PORT=3001
+```
+
+3. **Deploy** following platform-specific instructions
+
+### Security Best Practices
+
+✅ **DO:**
+- Use environment variables for all sensitive data
+- Configure variables through hosting platform dashboard
+- Keep `.env.local` in `.gitignore`
+- Verify all sender emails in SendGrid before production
+- Use different API keys for development and production
+
+❌ **DON'T:**
+- Commit `.env.local` or `.env` files
+- Hardcode API keys in source code
+- Share production API keys in team chat or documentation
+- Use production credentials in development environment
