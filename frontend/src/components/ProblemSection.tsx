@@ -62,7 +62,7 @@ const ProblemSection = () => {
             Why Choose REEF
           </h3>
 
-          <p className="mb-6 md:px-4 text-center text-[18px]">REEF Energy Management redefines how distributed energy resources are deployed and operated. It connects and controls any solar PV, battery, EV or heat pump - no matter the brand - through a robust edge-cloud architecture that works even when the internet doesn’t.</p>
+          <p className="mb-6 md:px-4 text-center text-[18px]">REEF Energy Management redefines how distributed energy resources are deployed and operated. It connects and controls any solar PV, battery, EV or heat pump - no matter the brand - through a robust Edge Cloud architecture that works even when the internet doesn’t.</p>
 
           <p className="text-black text-[18px] font-[500] md:mb-16 mb-8 md:px-4 text-center">By removing cloud dependencies and simplifying installations, REEF helps utilities, EPCs and OEMs scale faster, lower costs, and offer new digital services to their customers.</p>
 
