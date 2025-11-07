@@ -107,7 +107,7 @@ const CTASection = () => {
              Discover How REEF Can Transform Your Business
            </h2>
            <p className="text-xl text-black mb-8 max-w-3xl mx-auto">
-             Smart Energy will be present at Enlit 2025 in Bilbau, a global forum focused on the energy transition and conecting industries to drive the shift toward a decabornized evergy system.
+             Smart Energy will be present at Enlit 2025 in Bilbau, a global forum focused on the energy transition and connecting industries to drive the shift toward a decabornized evergy system.
            </p>
         </div>
 
@@ -250,7 +250,7 @@ const CTASection = () => {
                   <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                     <span className="text-sm">✓</span>
                   </div>
-                  <span><b className="font-semibold">Smart edge-cloud platform</b> — monitor and manage multiple assets in one place, through dedicated interfaces and intelligent algorithms</span>
+                  <span><b className="font-semibold">Smart Edge Cloud platform</b> — monitor and manage multiple assets in one place, through dedicated interfaces and intelligent algorithms</span>
                 </li>
                  <li className="flex items-start gap-3">
                   <div className="w-6 h-6 bg-reef-background/20 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">

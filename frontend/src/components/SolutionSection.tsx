@@ -16,7 +16,7 @@ const SolutionSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="reef-section-title">
-            REEF: The Edge-Cloud Solution That{" "}
+            REEF: The Edge Cloud Solution That{" "}
             <span className="reef-highlight">Revolutionizes Energy Management</span>
           </h2>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
@@ -51,10 +51,10 @@ const SolutionSection = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
-                Advanced Edge-Cloud Technology
+                Advanced Edge Cloud Technology
               </h3>
               <p className="text-muted-foreground text-lg mb-6">
-                We combine intelligent local processing with centralized cloud control, 
+                We combine intelligent local processing with centralized cloud control,
                 ensuring optimized performance and maximum reliability.
               </p>
               <div className="flex flex-wrap gap-3">
@@ -81,8 +81,8 @@ const SolutionSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button 
-            size="lg" 
+          <Button
+            size="lg"
             className="px-8 py-4 text-lg animate-glow-hover"
           >
             Request a Technical Demo
