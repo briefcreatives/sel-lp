@@ -57,7 +57,7 @@ const HeroSection = () => {
         </div>
 
           <p className="text-xl md:text-2xl text-black text-left mb-8 max-w-7xl leading-relaxed font-[500] tracking-[0.54px] mt-[26px]">
-            The Scalable Edge cloud core for distributed Energy<br /> Resource Integration and Control
+            The Scalable Edge Cloud core for distributed Energy<br /> Resource Integration and Control
           </p>
 
 

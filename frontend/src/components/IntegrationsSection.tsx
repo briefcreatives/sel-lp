@@ -68,7 +68,7 @@ const IntegrationsSection = () => {
             variants={itemVariants}
             className="text-[18px] text-black mx-auto leading-relaxed text-center"
           >
-            With REEF you have access to a scalable Energy Management Platform, designed to accelerate the development of new energy solutions for Energy Transition, joining Data and Electrons Management tointegrate intelligence, control and to solve multiple practical implementation issues.
+            With REEF you have access to a scalable Energy Management Platform, designed to accelerate the development of new energy solutions for Energy Transition, joining Data and Electrons Management to integrate intelligence, control and to solve multiple practical implementation issues.
           </motion.p>
         </motion.div>
 
