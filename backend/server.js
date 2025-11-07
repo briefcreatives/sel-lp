@@ -4,9 +4,13 @@ import cors from 'cors';
 import sgMail from '@sendgrid/mail';
 
 console.log('Starting backend...');
-dotenv.config({ path: '.env.local' });
 
-// Debug: verificar se as variáveis foram carregadas
+// Load environment variables
+// Try .env.local first (development), then .env (production), then use system env vars
+dotenv.config({ path: '.env.local' }); // Development
+dotenv.config({ path: '.env' });       // Production fallback
+// System environment variables take precedence over file variables
+
 console.log('Environment variables loaded:');
 console.log('- SENDGRID_API_KEY:', process.env.SENDGRID_API_KEY ? '✓ Set' : '✗ Missing');
 console.log('- TO_EMAIL:', process.env.TO_EMAIL || '✗ Missing');
