@@ -113,7 +113,7 @@ const CTASection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
           <div className="bg-reef-background rounded-[20px] p-6 shadow-xl border border-reef-secondary/30">
-            <h3 className="text-2xl font-bold text-primary mb-6">Schedule Your Demo</h3>
+            <h3 className="text-2xl font-semibold sm:font-bold text-primary mb-6">Schedule Your Demo</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
