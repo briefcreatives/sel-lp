@@ -46,8 +46,7 @@ const CTASection = () => {
     }
 
     try {
-
-      const response = await fetch('/api/send-email', {
+      const response = await fetch('https://52sr7xqmzgscbrh4z2hpf7sv5q0fxpnk.lambda-url.eu-central-1.on.aws/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

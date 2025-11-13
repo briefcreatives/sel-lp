@@ -1,202 +1,397 @@
-# Frontend - REEF Energy Management
+# Frontend - REEF Energy Management# Frontend - REEF Energy Management
 
-## 🚀 Getting Started
 
-React application built with Vite, TypeScript, and Tailwind CSS.
 
-### Prerequisites
+React application built with Vite, TypeScript, and Tailwind CSS.React application built with Vite, TypeScript, and Tailwind CSS.
 
-## 🚀 Quick Start
 
-- **Node.js**: ^24.9.0 (defined in `.nvmrc` and `package.json`)
+
+## 🚀 Quick Start## 🚀 Getting Started
+
+
+
+```bash### Prerequisites
+
+# 1. Use correct Node.js version
+
+nvm use## 🚀 Quick Start
+
+
+
+# 2. Install dependencies- **Node.js**: ^22.0.0 (defined in `.nvmrc` and `package.json`)
+
+yarn install
 
 ```bash- **Yarn**: Recommended package manager
 
-# Install dependencies
+# 3. Configure environment variables
+
+cp .env.example .env# Install dependencies
+
+# Edit .env with your configuration
 
 yarn install### Installation
 
-
-
-# Start development server1. **Clone the repository**
-
-yarn dev```bash
-
-```git clone <repository-url>
-
-cd sel-lp
-
-**Development server:** http://localhost:8080```
-
-
-
-## 📦 Available Scripts2. **Use the correct Node.js version**
-
-```bash
-
-```bashnvm use
-
-# Development server (port 8080)```
+# 4. Start development server
 
 yarn dev
 
-3. **Install dependencies**
-
-# Build for production```bash
-
-yarn buildyarn install
-
 ```
 
-# Build for development (no minification)
+# Start development server1. **Clone the repository**
 
-yarn build:dev4. **Configure environment variables**
+**Development server:** http://localhost:8080
 
-
-
-# Preview production buildCreate a `.env.local` file in the root directory based on `.env.example`:
-
-yarn preview
-
-```bash
-
-# Lint codecp .env.example .env.local
-
-yarn lint```
-
-```
-
-Edit `.env.local` and add your credentials:
+yarn dev```bash
 
 ## 🔧 Environment Variables
 
-```bash
-
-Create `.env.local` file in this folder:# SendGrid API Key (get it from https://app.sendgrid.com/settings/api_keys)
-
-SENDGRID_API_KEY=your_sendgrid_api_key_here
+Create a `.env.local` file in the root directory based on `.env.example`:
 
 ```bash
+# Copy the template
+cp .env.example .env.local
+```
 
-# Copy template# Email addresses (must be verified in SendGrid)
+Edit `.env.local` and configure the required variables:
 
-cp .env.example .env.localTO_EMAIL=destination@example.com
+```bash
+# API URL (required)
+# Backend API endpoint that handles contact form submissions and other services
+# Development: http://localhost:3001
+# Production: https://api.yourdomain.com (your deployed backend URL)
+VITE_API_URL=http://localhost:3001
 
-```FROM_EMAIL=sender@example.com
-
-
-
-**Variables:**# Google Tag Manager ID (optional)
-
-```bashVITE_GTM_ID=GTM-XXXXXXX
-
-# Google Tag Manager ID (optional)```
-
+# Google Tag Manager ID (optional)
+# Get your GTM ID from https://tagmanager.google.com/
 VITE_GTM_ID=GTM-XXXXXXX
+```
 
-```**Important Setup Notes:**
+**Important:**
+
+- All environment variables must be prefixed with `VITE_` to be exposed to the frontend
+- Restart the dev server after changing the `.env.local` file
+- `VITE_API_URL` points to the backend server (no trailing slash)
+  - In **development**: Use `http://localhost:3001` (make sure backend is running)
+  - In **production**: Use your deployed backend URL (e.g., `https://api.yourdomain.com`)
+  - The frontend will make API calls to `${VITE_API_URL}/api/send-email` for the contact form
 
 
 
-**Important:** **SendGrid:**
+## 📦 Available Scripts3. **Install dependencies**
 
-- All frontend environment variables must start with `VITE_` prefix- Get your API key from [SendGrid Dashboard](https://app.sendgrid.com/settings/api_keys)
 
-- Restart dev server after changing `.env.local`- Verify your sender email in [Sender Authentication](https://app.sendgrid.com/settings/sender_auth)
 
-- Both `TO_EMAIL` and `FROM_EMAIL` must be verified in SendGrid to avoid 403 errors
+```bash# Build for production```bash
 
-## 📁 Project Structure
+# Development server (port 8080)
 
-**Google Tag Manager (Optional):**
+yarn devyarn buildyarn install
 
-```- Get your GTM ID from [Google Tag Manager](https://tagmanager.google.com/)
 
-frontend/- The GTM ID is injected into `index.html` during build via Vite
 
-├── src/- If not set, defaults to `GTM-PRB8MJVT`
+# Build for production```
 
-│   ├── components/          # React components
+yarn build
 
-│   │   ├── ui/             # shadcn/ui components### Available Commands
+# Build for development (no minification)
 
-│   │   ├── AboutSection.tsx
+# Build for development (no minification)
 
-│   │   ├── CTASection.tsx  # Contact form#### Frontend Development
+yarn build:devyarn build:dev4. **Configure environment variables**
 
-│   │   ├── HeroSection.tsx
 
-│   │   └── ...```bash
 
-│   │# Start frontend development server at http://[::]:8080
+# Preview production build
 
-│   ├── pages/              # Page componentsyarn dev
+yarn preview
 
-│   │   ├── Index.tsx       # Main page
+# Preview production buildCreate a `.env.local` file in the root directory based on `.env.example`:
 
-│   │   └── NotFound.tsx    # 404 page# Build for production
+# Lint code
 
-│   │yarn build
-
-│   ├── hooks/              # Custom React hooks
-
-│   ├── lib/                # Utilities# Build for development
-
-│   ├── assets/             # Imagesyarn build:dev
-
-│   ├── App.tsx             # Root component
-
-│   └── main.tsx            # Entry point# Preview production build
-
-│yarn preview
-
-├── public/                 # Static files
-
-├── index.html              # HTML template# Lint code
-
-├── vite.config.ts          # Vite configurationyarn lint
-
-└── tailwind.config.ts      # Tailwind configuration```
+yarn lintyarn preview
 
 ```
 
-#### Backend Development (Contact Form API)
+```bash
+
+## 📁 Project Structure
+
+# Lint codecp .env.example .env.local
+
+```
+
+frontend/yarn lint```
+
+├── src/
+
+│   ├── components/          # React components```
+
+│   │   ├── ui/             # shadcn/ui components
+
+│   │   ├── CTASection.tsx  # Contact formEdit `.env.local` and add your credentials:
+
+│   │   └── ...
+
+│   ├── pages/              # Page components## 🔧 Environment Variables
+
+│   │   ├── Index.tsx       # Main page
+
+│   │   └── NotFound.tsx    # 404 page```bash
+
+│   ├── hooks/              # Custom React hooks
+
+│   ├── lib/                # UtilitiesCreate `.env.local` file in this folder:# SendGrid API Key (get it from https://app.sendgrid.com/settings/api_keys)
+
+│   │   ├── utils.ts       # cn() helper
+
+│   │   └── gtm.ts         # Google Tag ManagerSENDGRID_API_KEY=your_sendgrid_api_key_here
+
+│   ├── assets/             # Images and fonts
+
+│   ├── App.tsx             # Root component```bash
+
+│   └── main.tsx            # Entry point
+
+├── public/                 # Static files# Copy template# Email addresses (must be verified in SendGrid)
+
+├── vite.config.ts          # Vite configuration
+
+└── tailwind.config.ts      # Tailwind configurationcp .env.example .env.localTO_EMAIL=destination@example.com
+
+```
+
+```FROM_EMAIL=sender@example.com
 
 ## 🎨 Tech Stack
 
-The project includes a Node.js Express server for handling contact form submissions via SendGrid.
 
-- **Framework:** React 18.3.1
 
-- **Build Tool:** Vite 5.4.19```bash
+- **Framework:** React 18
 
-- **Language:** TypeScript 5.8.3# Start backend server at http://localhost:3001
+- **Build Tool:** Vite 5**Variables:**# Google Tag Manager ID (optional)
 
-- **Styling:** Tailwind CSS 3.4.1node server.js
+- **Language:** TypeScript 5
+
+- **Styling:** Tailwind CSS```bashVITE_GTM_ID=GTM-XXXXXXX
+
+- **UI Components:** shadcn/ui (Radix UI)
+
+- **Forms:** React Hook Form + Zod# Google Tag Manager ID (optional)```
+
+- **Icons:** Lucide React
+
+- **Animations:** Framer MotionVITE_GTM_ID=GTM-XXXXXXX
+
+- **Routing:** React Router DOM
+
+- **State:** TanStack Query```**Important Setup Notes:**
+
+
+
+## 🛠️ Development
+
+
+
+### Import Aliases**Important:** **SendGrid:**
+
+
+
+Use `@/` prefix for imports:- All frontend environment variables must start with `VITE_` prefix- Get your API key from [SendGrid Dashboard](https://app.sendgrid.com/settings/api_keys)
+
+
+
+```tsx- Restart dev server after changing `.env.local`- Verify your sender email in [Sender Authentication](https://app.sendgrid.com/settings/sender_auth)
+
+import { Button } from '@/components/ui/button'
+
+import { cn } from '@/lib/utils'- Both `TO_EMAIL` and `FROM_EMAIL` must be verified in SendGrid to avoid 403 errors
+
+```
+
+## 📁 Project Structure
+
+### Adding Components
+
+**Google Tag Manager (Optional):**
+
+```bash
+
+# Add new shadcn/ui component```- Get your GTM ID from [Google Tag Manager](https://tagmanager.google.com/)
+
+npx shadcn-ui@latest add button
+
+```frontend/- The GTM ID is injected into `index.html` during build via Vite
+
+
+
+### Styling├── src/- If not set, defaults to `GTM-PRB8MJVT`
+
+
+
+- Use Tailwind CSS utility classes│   ├── components/          # React components
+
+- Use `cn()` from `@/lib/utils` for conditional classes
+
+- Custom REEF classes: `reef-hero-title`, `reef-section-title`, `reef-highlight`│   │   ├── ui/             # shadcn/ui components### Available Commands
+
+
+
+## 🌐 API Integration│   │   ├── AboutSection.tsx
+
+
+
+The frontend connects to the backend API for the contact form.│   │   ├── CTASection.tsx  # Contact form#### Frontend Development
+
+
+
+**Development:**│   │   ├── HeroSection.tsx
+
+- Uses `VITE_API_URL` environment variable
+
+- Defaults to `http://localhost:3001` if not set│   │   └── ...```bash
+
+
+
+**Production:**│   │# Start frontend development server at http://[::]:8080
+
+- Set `VITE_API_URL` to your production backend URL
+
+│   ├── pages/              # Page componentsyarn dev
+
+**Contact Form** (`src/components/CTASection.tsx`):
+
+- Submits to `/api/send-email`│   │   ├── Index.tsx       # Main page
+
+- Validates with Zod schema
+
+- Shows toast notifications│   │   └── NotFound.tsx    # 404 page# Build for production
+
+
+
+## 📦 Build for Production│   │yarn build
+
+
+
+```bash│   ├── hooks/              # Custom React hooks
+
+# Build
+
+yarn build│   ├── lib/                # Utilities# Build for development
+
+
+
+# Output directory: dist/│   ├── assets/             # Imagesyarn build:dev
+
+
+
+# Preview build│   ├── App.tsx             # Root component
+
+yarn preview
+
+```│   └── main.tsx            # Entry point# Preview production build
+
+
+
+**Build includes:**│yarn preview
+
+- Minification and tree-shaking
+
+- CSS optimization├── public/                 # Static files
+
+- Asset optimization
+
+- Environment variables injected at build time├── index.html              # HTML template# Lint code
+
+
+
+## 🌐 Deployment├── vite.config.ts          # Vite configurationyarn lint
+
+
+
+### Static Hosting (Vercel, Netlify, etc.)└── tailwind.config.ts      # Tailwind configuration```
+
+
+
+1. Build the project: `yarn build````
+
+2. Deploy the `dist/` folder
+
+3. Set environment variables in hosting dashboard:#### Backend Development (Contact Form API)
+
+   ```
+
+   VITE_API_URL=https://your-backend-url.com## 🎨 Tech Stack
+
+   VITE_GTM_ID=GTM-XXXXXXX
+
+   ```The project includes a Node.js Express server for handling contact form submissions via SendGrid.
+
+
+
+### Environment Variables for Production- **Framework:** React 18.3.1
+
+
+
+**Configure in your hosting platform:**- **Build Tool:** Vite 5.4.19```bash
+
+
+
+```bash- **Language:** TypeScript 5.8.3# Start backend server at http://localhost:3001
+
+VITE_API_URL=https://your-backend-url.com
+
+VITE_GTM_ID=GTM-XXXXXXX- **Styling:** Tailwind CSS 3.4.1node server.js
+
+```
 
 - **UI Components:** shadcn/ui (Radix UI primitives)```
 
-- **Forms:** React Hook Form + Zod validation
+**Important:**
 
-- **Icons:** Lucide React**Running Both Frontend and Backend:**
+- Never commit `.env` files to repository- **Forms:** React Hook Form + Zod validation
 
-- **Animations:** Framer Motion
+- Keep sensitive data in hosting platform dashboard
 
-- **Routing:** React Router DOMYou need to run both servers simultaneously during development:
+- Use different values for development and production- **Icons:** Lucide React**Running Both Frontend and Backend:**
 
 
 
-## 🛠️ Development```bash
+## 🐛 Troubleshooting- **Animations:** Framer Motion
 
-# Terminal 1 - Backend API
+
+
+**Environment variables not working:**- **Routing:** React Router DOMYou need to run both servers simultaneously during development:
+
+- Ensure variables start with `VITE_` prefix
+
+- Restart dev server after changing `.env`
+
+
+
+**Cannot connect to backend:**## 🛠️ Development```bash
+
+- Check backend is running on correct port
+
+- Verify `VITE_API_URL` in `.env` matches backend URL# Terminal 1 - Backend API
+
+- Check browser console for CORS errors
 
 ### Adding Componentsnode server.js
 
+**Port 8080 in use:**
+
+- Change port in `vite.config.ts`: `server: { port: 8081 }`
 
 
-```bash# Terminal 2 - Frontend
 
-# Example: Add a new shadcn/ui componentyarn dev
+---```bash# Terminal 2 - Frontend
+
+
+
+**Need backend setup?** See [../backend/README.md](../backend/README.md)# Example: Add a new shadcn/ui componentyarn dev
+
 
 npx shadcn-ui@latest add button```
 
